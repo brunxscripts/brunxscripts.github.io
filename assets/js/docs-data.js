@@ -213,60 +213,6 @@ end`,
         { version: '1.0.0-docs', date: '2026-05-27', changes: ['Added full bridge documentation page.', 'Added client API, server API, target API and framework adapter reference.', 'Added resource structure from the uploaded pixel_bridge archive.', 'Prepared docs-data.js for future bridge updates.'] }
       ]
     },
-    {
-      slug: 'resource-template',
-      name: 'Resource Template',
-      badge: 'Template',
-      version: '1.0.0',
-      status: 'Editable',
-      short: 'A clean placeholder page you can duplicate for every future BrunxScript resource.',
-      icon: 'RT',
-      category: 'Developer',
-      page: 'docs/resource-template.html',
-      download: '#',
-      requirements: ['brunxbridge', 'ox_lib recommended'],
-      overview: [
-        'Use this page as a starting point for new resource documentation.',
-        'The layout supports installation steps, configuration examples, exports, events, FAQ and changelog entries.',
-        'All content is loaded from assets/js/docs-data.js, so your HTML stays clean.'
-      ],
-      install: ['Copy docs/_template.html.', 'Rename it to your-script.html.', 'Set body data-page to your new slug.', 'Add your script object in docs-data.js.'],
-      config: `Config = {}
-Config.Debug = false
-Config.Locale = 'en'
-Config.UseBridge = true`,
-      exports: [{ type: 'example', name: 'ExampleExport()', description: 'Replace this with your real export.' }],
-      events: [{ type: 'example', name: 'resource:client:example', description: 'Replace this with your real event.' }],
-      changelog: [{ version: '1.0.0', date: '2026-05-27', changes: ['Template page added.'] }]
-    },
-    {
-      slug: 'integration-examples',
-      name: 'Integration Examples',
-      badge: 'Examples',
-      version: '1.0.0',
-      status: 'Docs',
-      short: 'Example snippets for common BrunxScript integrations and bridge usage.',
-      icon: 'IE',
-      category: 'Examples',
-      page: 'docs/integration-examples.html',
-      download: '#',
-      requirements: ['brunxbridge'],
-      overview: [
-        'A place for practical snippets and integration notes.',
-        'Document how other developers should connect their resources to your scripts.',
-        'Useful for exports, server events, client events and configuration examples.'
-      ],
-      install: ['Open the page.', 'Replace the placeholder examples with your own snippets.', 'Link this page from any relevant resource documentation.'],
-      config: `-- Example bridge notification
-exports['brunxbridge']:Notify({
-  title = 'BrunxScript',
-  description = 'Integration loaded successfully.',
-  type = 'success'
-})`,
-      exports: [{ type: 'client', name: 'Notify(data)', description: 'Display a unified notification.' }],
-      events: [{ type: 'server', name: 'brunx:server:example', description: 'Example server integration event.' }],
-      changelog: [{ version: '1.0.0', date: '2026-05-27', changes: ['Example integration page added.'] }]
-    }
   ],
 
   faq: [
