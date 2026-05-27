@@ -21,7 +21,7 @@ window.BRUNX = {
     github: '#',
     discord: '#',
     tebex: '#',
-    brunxBridgeDownload: 'downloads/brunxbridge.zip'
+    brunxBridgeDownload: 'downloads/brunxbridge.rar'
   },
 
   scripts: [
@@ -35,7 +35,7 @@ window.BRUNX = {
       icon: 'BX',
       category: 'Bridge',
       page: 'docs/brunxbridge.html',
-      download: 'downloads/brunxbridge.zip',
+      download: 'downloads/brunxbridge.rar',
       requirements: [
         'FiveM artifact with Lua 5.4 enabled',
         'One supported framework: Qbox, QB-Core, ESX, vRP or standalone/custom',
@@ -216,8 +216,6 @@ end`,
   ],
 
   faq: [
-    { q: 'Can I host this on GitHub Pages?', a: 'Yes. This is fully static and does not require Node.js, PHP, MySQL or a build step.' },
-    { q: 'Where do I edit the script pages?', a: 'Edit assets/js/docs-data.js. Every documentation page reads its content from that one file.' },
-    { q: 'How do I add BrunxBridge?', a: 'Put brunxbridge.zip in the downloads folder or replace the download URL in assets/js/docs-data.js.' }
+    { q: 'How do I add BrunxBridge?', a: 'Put brunxbridge.rar in the downloads folder or replace the download URL in assets/js/docs-data.js.' }
   ]
 };
