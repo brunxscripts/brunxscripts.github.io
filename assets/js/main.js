@@ -10,7 +10,7 @@ function setBrand(){
   $$('.js-brand-name').forEach(e=>e.textContent=CONFIG.brand?.name||'BrunxScript');
   $$('.js-brand-tagline').forEach(e=>e.textContent=CONFIG.brand?.tagline||'Documentation');
   $$('.js-logo').forEach(img=>img.src=url(CONFIG.brand?.logo||'assets/img/logo.svg'));
-  $$('.js-bridge-download').forEach(a=>a.href=url(CONFIG.links?.brunxBridgeDownload||'downloads/brunxbridge.zip'));
+  $$('.js-bridge-download').forEach(a=>a.href=url(CONFIG.links?.brunxBridgeDownload||'https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip'));
 }
 function scriptBySlug(slug){return (CONFIG.scripts||[]).find(s=>s.slug===slug) || (CONFIG.scripts||[])[0];}
 function navItems(){return (CONFIG.scripts||[]).map(s=>`<a href="${url(s.page)}" class="${page===s.slug?'active':''}">${esc(s.name)}</a>`).join('');}
@@ -44,7 +44,7 @@ function renderExtraSections(s){
     html += `<section id="frameworks" class="doc-section reveal"><h2>Framework support</h2><div class="feature-grid">${s.frameworks.map(f=>`<div class="mini-card"><span class="badge">${esc(f.name)}</span><h3>${esc(f.title)}</h3><p>${esc(f.description)}</p></div>`).join('')}</div></section>`;
   }
   if (s.notes?.length) {
-    html += `<section id="notes" class="doc-section reveal"><h2>Developer notes</h2><ul>${s.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></section>`;
+    html += `<section id="notes" class="doc-section reveal"><h2>Implementation notes</h2><ul>${s.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></section>`;
   }
   return html;
 }

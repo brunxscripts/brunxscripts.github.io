@@ -1,19 +1,8 @@
-/*
-  BrunxScript Docs Data
-  ---------------------------------------------------------
-  Edit this file to change the website content.
-
-  Add a new script:
-  1. Copy docs/_template.html to docs/your-script.html
-  2. Change <body data-page="your-script">
-  3. Add a matching object below with slug: "your-script"
-*/
-
 window.BRUNX = {
   brand: {
     name: 'BrunxScript',
-    tagline: 'Future-proof FiveM resources',
-    description: 'Clean documentation, fast setup guides and stable bridge tooling for modern FiveM servers.',
+    tagline: 'FiveM resource documentation',
+    description: 'Official documentation, API references and setup guides for BrunxScript resources.',
     logo: 'assets/img/logo.svg'
   },
 
@@ -21,7 +10,7 @@ window.BRUNX = {
     github: '#',
     discord: '#',
     tebex: '#',
-    brunxBridgeDownload: 'downloads/brunxbridge.rar'
+    brunxBridgeDownload: 'https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip'
   },
 
   scripts: [
@@ -35,7 +24,7 @@ window.BRUNX = {
       icon: 'BX',
       category: 'Bridge',
       page: 'docs/brunxbridge.html',
-      download: 'downloads/brunxbridge.rar',
+      download: 'https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip',
       requirements: [
         'FiveM artifact with Lua 5.4 enabled',
         'One supported framework: Qbox, QB-Core, ESX, vRP or standalone/custom',
@@ -45,11 +34,11 @@ window.BRUNX = {
       overview: [
         'BrunxBridge is the base dependency for BrunxScript resources. It keeps framework-specific logic in one place so every other script can call one clean API.',
         'The bridge contains client framework adapters, server framework adapters, target adapters and shared utilities. This makes it easier to support Qbox, QB-Core, ESX, vRP and future custom frameworks without rewriting every resource.',
-        'Use this page as the canonical API reference for the bridge. When the real bridge receives new helpers, add them here once and every script page can link back to it.'
+        'Use this page as the official API reference for BrunxBridge exports, events, framework adapters and target helpers.'
       ],
       install: [
-        'Rename the resource folder to pixel_bridge or brunxbridge. Keep the same name everywhere in your exports.',
-        'Place the bridge inside your resources folder, for example resources/[brunx]/pixel_bridge.',
+        'Use the documented resource name consistently in your server.cfg and exports.',
+        'Install the bridge inside your server resources folder.',
         'Add ensure pixel_bridge before every BrunxScript resource in server.cfg.',
         'Configure framework, target and debug settings in shared/config.lua.',
         'Restart the server and verify that the bridge starts before dependent resources.'
@@ -117,26 +106,26 @@ end`,
         '├─ shared/',
         '│  ├─ bridge.lua        # shared bridge object / bootstrapping',
         '│  ├─ config.lua        # framework, target and debug settings',
-        '│  └─ utils.lua         # reusable helper functions',
+        '│  └─ utils.lua',
         '├─ client/',
-        '│  ├─ main.lua          # client bridge loader and exported API',
+        '│  ├─ main.lua',
         '│  ├─ framework/',
-        '│  │  ├─ qbox.lua       # Qbox client adapter',
-        '│  │  ├─ qb.lua         # QB-Core client adapter',
-        '│  │  ├─ esx.lua        # ESX client adapter',
-        '│  │  └─ vrp.lua        # vRP client adapter',
+        '│  │  ├─ qbox.lua',
+        '│  │  ├─ qb.lua',
+        '│  │  ├─ esx.lua',
+        '│  │  └─ vrp.lua',
         '│  └─ target/',
-        '│     ├─ _target.lua    # target router',
-        '│     ├─ ox.lua         # ox_target adapter',
-        '│     ├─ qb.lua         # qb-target adapter',
-        '│     └─ drawtext.lua   # drawtext fallback adapter',
+        '│     ├─ _target.lua',
+        '│     ├─ ox.lua',
+        '│     ├─ qb.lua',
+        '│     └─ drawtext.lua',
         '└─ server/',
-        '   ├─ main.lua          # server bridge loader and exported API',
+        '   ├─ main.lua',
         '   └─ framework/',
-        '      ├─ qbox.lua       # Qbox server adapter',
-        '      ├─ qb.lua         # QB-Core server adapter',
-        '      ├─ esx.lua        # ESX server adapter',
-        '      └─ vrp.lua        # vRP server adapter'
+        '      ├─ qbox.lua',
+        '      ├─ qb.lua',
+        '      ├─ esx.lua',
+        '      └─ vrp.lua'
       ],
       exports: [
         { type: 'shared export', name: 'GetBridge()', description: 'Returns the active bridge object. This is the preferred entrypoint for new resources.' },
@@ -200,7 +189,7 @@ end`,
         'Keep target-specific logic inside client/target adapters.',
         'Do not call qbx_core, qb-core, ESX or target exports directly from other BrunxScript resources. Call the bridge instead.',
         'When adding a new framework, add a new adapter file and register it in the bridge loader.',
-        'When adding or renaming exports, update this docs-data.js object so the website stays current.'
+        'Use the documented exports and events instead of direct framework calls where possible.'
       ],
       events: [
         { type: 'client', name: 'pixel_bridge:client:notify', description: 'Optional client event wrapper for bridge notifications.' },
@@ -210,12 +199,42 @@ end`,
         { type: 'client', name: 'QBCore:Client:OnJobUpdate / qbx_core:client:onJobUpdate / esx:setJob', description: 'Framework job update events are normalized internally by the adapter layer.' }
       ],
       changelog: [
-        { version: '1.0.0-docs', date: '2026-05-27', changes: ['Added full bridge documentation page.', 'Added client API, server API, target API and framework adapter reference.', 'Added resource structure from the uploaded pixel_bridge archive.', 'Prepared docs-data.js for future bridge updates.'] }
+        { version: '1.0.0', date: '2026-05-27', changes: ['Initial BrunxBridge documentation release.', 'Added client API, server API, target API and framework adapter reference.', 'Added installation, configuration and usage examples.'] }
       ]
     },
+    {
+      slug: 'integration-examples',
+      name: 'Integration Guide',
+      badge: 'Guide',
+      version: '1.0.0',
+      status: 'Docs',
+      short: 'Practical integration guide for connecting custom resources to BrunxBridge.',
+      icon: 'IE',
+      category: 'Integration',
+      page: 'docs/integration-examples.html',
+      download: '#',
+      requirements: ['brunxbridge'],
+      overview: [
+        'This guide shows how custom resources can use BrunxBridge for notifications, callbacks, job checks and framework-safe logic.',
+        'Using the bridge keeps integrations compatible with Qbox, QB-Core, ESX and other supported frameworks.',
+        'Use these patterns when connecting external scripts to BrunxScript resources.'
+      ],
+      install: ['Ensure BrunxBridge starts before the resource that uses it.', 'Call the bridge export from client or server code.', 'Use the documented events and exports instead of direct framework-specific calls.'],
+      config: `-- Client notification
+exports['brunxbridge']:Notify({
+  title = 'BrunxScript',
+  description = 'Integration loaded successfully.',
+  type = 'success'
+})`,
+      exports: [{ type: 'client', name: 'Notify(data)', description: 'Display a unified notification.' }],
+      events: [{ type: 'shared', name: 'pixel_bridge:ready', description: 'Fired when the bridge is ready for connected resources.' }],
+      changelog: [{ version: '1.0.0', date: '2026-05-27', changes: ['Initial integration guide release.'] }]
+    }
   ],
 
   faq: [
-    { q: 'How do I add BrunxBridge?', a: 'Put brunxbridge.rar in the downloads folder or replace the download URL in assets/js/docs-data.js.' }
+    { q: 'Can I host this on GitHub Pages?', a: 'Yes. The documentation portal is fully static and does not require Node.js, PHP, MySQL or a build step.' },
+    { q: 'What does BrunxBridge do?', a: 'BrunxBridge provides one compatibility layer for frameworks, targets, notifications, callbacks, money, items and player data.' },
+    { q: 'Which frameworks are supported?', a: 'The bridge is designed for Qbox, QB-Core, ESX, vRP and standalone/custom framework setups.' }
   ]
 };
