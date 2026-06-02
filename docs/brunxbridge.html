@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,14 +8,118 @@
   <title>BrunxBridge Modules | BrunxScript Docs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css" />
-  
-<style>
-.api-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:18px 0}.api-card{padding:12px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.035);display:flex;justify-content:space-between;gap:10px;align-items:center}.api-card code{font-family:"JetBrains Mono",monospace;color:#fff}.api-card span,.pill{font-size:12px;color:#9aa6b2}.pill{display:inline-flex;padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.05);margin-bottom:8px}.doc-section{scroll-margin-top:90px}.section-head h2{margin-top:4px}.warning{border:1px solid rgba(255,198,41,.25);background:rgba(255,198,41,.08);padding:14px 16px;border-radius:14px}.module-table{width:100%;border-collapse:collapse;margin:20px 0}.module-table th,.module-table td{border-bottom:1px solid rgba(255,255,255,.09);padding:12px;vertical-align:top;text-align:left}.module-table th{color:#fff}.module-table td{color:#b8c2cc}.module-table a{color:#fff}pre{overflow:auto}.sidebar{max-height:calc(100vh - 100px);overflow:auto}.doc h1{font-size:clamp(34px,5vw,64px);line-height:1;margin-bottom:14px}.hero-note{font-size:18px;color:#b8c2cc}.doc code{font-family:"JetBrains Mono",monospace}
-</style>
+
+  <style>
+    .api-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 18px 0
+    }
+
+    .api-card {
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .035);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center
+    }
+
+    .api-card code {
+      font-family: "JetBrains Mono", monospace;
+      color: #fff
+    }
+
+    .api-card span,
+    .pill {
+      font-size: 12px;
+      color: #9aa6b2
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .05);
+      margin-bottom: 8px
+    }
+
+    .doc-section {
+      scroll-margin-top: 90px
+    }
+
+    .section-head h2 {
+      margin-top: 4px
+    }
+
+    .warning {
+      border: 1px solid rgba(255, 198, 41, .25);
+      background: rgba(255, 198, 41, .08);
+      padding: 14px 16px;
+      border-radius: 14px
+    }
+
+    .module-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0
+    }
+
+    .module-table th,
+    .module-table td {
+      border-bottom: 1px solid rgba(255, 255, 255, .09);
+      padding: 12px;
+      vertical-align: top;
+      text-align: left
+    }
+
+    .module-table th {
+      color: #fff
+    }
+
+    .module-table td {
+      color: #b8c2cc
+    }
+
+    .module-table a {
+      color: #fff
+    }
+
+    pre {
+      overflow: auto
+    }
+
+    .sidebar {
+      max-height: calc(100vh - 100px);
+      overflow: auto
+    }
+
+    .doc h1 {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1;
+      margin-bottom: 14px
+    }
+
+    .hero-note {
+      font-size: 18px;
+      color: #b8c2cc
+    }
+
+    .doc code {
+      font-family: "JetBrains Mono", monospace
+    }
+  </style>
 
 </head>
+
 <body data-page="brunxbridge-modules" data-base="../">
   <div class="bg"></div>
   <header class="header">
@@ -29,7 +134,8 @@
       <a href="#inventory-server">Inventory</a>
       <a href="#target-client">Target</a>
     </nav>
-    <a class="btn small js-bridge-download" href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download Bridge</a>
+    <a class="btn small js-bridge-download"
+      href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download Bridge</a>
     <button class="hamb" type="button">Menu</button>
   </header>
   <main class="container docs-layout">
@@ -39,71 +145,298 @@
       <div class="js-script-nav"></div>
       <strong style="display:block;padding:12px;color:#fff">BrunxBridge Modules</strong>
       <a href="#overview">Modules Overview</a>
-<a href="#framework-server">Framework — Server</a>
-<a href="#framework-client">Framework — Client</a>
-<a href="#inventory-server">Inventory — Server</a>
-<a href="#inventory-client">Inventory — Client</a>
-<a href="#banking-server">Banking — Server</a>
-<a href="#bossmenu-server">Boss Menu — Server</a>
-<a href="#bossmenu-client">Boss Menu — Client</a>
-<a href="#clothing-server">Clothing — Server</a>
-<a href="#clothing-client">Clothing — Client</a>
-<a href="#dialogue-client">Dialogue — Client</a>
-<a href="#dispatch-server">Dispatch — Server</a>
-<a href="#dispatch-client">Dispatch — Client</a>
-<a href="#doorlock-server">Doorlock — Server</a>
-<a href="#doorlock-client">Doorlock — Client</a>
-<a href="#fuel-client">Fuel — Client</a>
-<a href="#helptext-server">HelpText — Server</a>
-<a href="#helptext-client">HelpText — Client</a>
-<a href="#housing-client">Housing — Client</a>
-<a href="#input-client">Input — Client</a>
-<a href="#locales-shared">Locales — Shared</a>
-<a href="#menu-client">Menu — Client</a>
-<a href="#notify-server">Notify — Server</a>
-<a href="#notify-client">Notify — Client</a>
-<a href="#phone-server">Phone — Server</a>
-<a href="#phone-client">Phone — Client</a>
-<a href="#progressbar-client">Progress Bar — Client</a>
-<a href="#shops-server">Shops — Server</a>
-<a href="#shops-client">Shops — Client</a>
-<a href="#skills-server">Skills — Server</a>
-<a href="#skills-client">Skills — Client</a>
-<a href="#target-client">Target — Client</a>
-<a href="#vehiclekey-client">Vehicle Key — Client</a>
-<a href="#version-server">Version — Server</a>
-<a href="#weather-client">Weather — Client</a>
-<a href="#zones-client">Zones — Client</a>
+      <a href="#framework-server">Framework — Server</a>
+      <a href="#framework-client">Framework — Client</a>
+      <a href="#inventory-server">Inventory — Server</a>
+      <a href="#inventory-client">Inventory — Client</a>
+      <a href="#banking-server">Banking — Server</a>
+      <a href="#bossmenu-server">Boss Menu — Server</a>
+      <a href="#bossmenu-client">Boss Menu — Client</a>
+      <a href="#clothing-server">Clothing — Server</a>
+      <a href="#clothing-client">Clothing — Client</a>
+      <a href="#dialogue-client">Dialogue — Client</a>
+      <a href="#dispatch-server">Dispatch — Server</a>
+      <a href="#dispatch-client">Dispatch — Client</a>
+      <a href="#doorlock-server">Doorlock — Server</a>
+      <a href="#doorlock-client">Doorlock — Client</a>
+      <a href="#fuel-client">Fuel — Client</a>
+      <a href="#helptext-server">HelpText — Server</a>
+      <a href="#helptext-client">HelpText — Client</a>
+      <a href="#housing-client">Housing — Client</a>
+      <a href="#input-client">Input — Client</a>
+      <a href="#locales-shared">Locales — Shared</a>
+      <a href="#menu-client">Menu — Client</a>
+      <a href="#notify-server">Notify — Server</a>
+      <a href="#notify-client">Notify — Client</a>
+      <a href="#phone-server">Phone — Server</a>
+      <a href="#phone-client">Phone — Client</a>
+      <a href="#progressbar-client">Progress Bar — Client</a>
+      <a href="#shops-server">Shops — Server</a>
+      <a href="#shops-client">Shops — Client</a>
+      <a href="#skills-server">Skills — Server</a>
+      <a href="#skills-client">Skills — Client</a>
+      <a href="#target-client">Target — Client</a>
+      <a href="#vehiclekey-client">Vehicle Key — Client</a>
+      <a href="#version-server">Version — Server</a>
+      <a href="#weather-client">Weather — Client</a>
+      <a href="#zones-client">Zones — Client</a>
     </aside>
     <article class="doc" id="docRoot">
       <section class="doc-section" id="top">
         <p class="eyebrow">Core Bridge · Modules API</p>
         <h1>BrunxBridge Modules</h1>
-        <p class="hero-note">Complete module reference converted from Community Bridge style documentation to BrunxBridge / <code>brnx_bridge</code> usage.</p>
-        <div class="warning"><strong>Belangrijk:</strong> gebruik in resources <code>exports['brnx_bridge']:Bridge()</code> en module calls via <code>Bridge.Module.Function()</code>. Gebruik geen <code>community_bridge</code> resource name.</div>
+        <p class="hero-note">Complete module reference converted from Community Bridge style documentation to
+          BrunxBridge / <code>brnx_bridge</code> usage.</p>
+        <div class="warning"><strong>Belangrijk:</strong> gebruik in resources
+          <code>exports['brnx_bridge']:Bridge()</code> en module calls via <code>Bridge.Module.Function()</code>.
+          Gebruik geen <code>community_bridge</code> resource name.
+        </div>
       </section>
 
       <section class="doc-section" id="module-list">
         <h2>Available Modules</h2>
         <table class="module-table">
-          <thead><tr><th>Module</th><th>Page</th><th>Side</th><th>Purpose</th></tr></thead>
-          <tbody><tr><td><a href="#framework-server">Framework</a></td><td>Framework — Server</td><td>Server</td><td>Server-side spelerdata, jobs, duty, metadata, accounts, stress/hunger/thirst, revive en job counts.</td></tr><tr><td><a href="#framework-client">Framework</a></td><td>Framework — Client</td><td>Client</td><td>Client-side player state, player job data, metadata, inventory fallbacks, account balance, death state, vehicle props and job counts.</td></tr><tr><td><a href="#inventory-server">Inventory</a></td><td>Inventory — Server</td><td>Server</td><td>Server-side inventory functies voor items, metadata, stashes, shops, trunks en player inventory management.</td></tr><tr><td><a href="#inventory-client">Inventory</a></td><td>Inventory — Client</td><td>Client</td><td>Client-side item checks, item counts, player inventory, registered items and image helpers.</td></tr><tr><td><a href="#banking-server">Banking</a></td><td>Banking — Server</td><td>Server</td><td>Server-side account money management.</td></tr><tr><td><a href="#bossmenu-server">BossMenu</a></td><td>Boss Menu — Server</td><td>Server</td><td>Open boss menu flows from server-side code for a target source and job.</td></tr><tr><td><a href="#bossmenu-client">BossMenu</a></td><td>Boss Menu — Client</td><td>Client</td><td>Open boss menu flows from client-side code.</td></tr><tr><td><a href="#clothing-server">Clothing</a></td><td>Clothing — Server</td><td>Server</td><td>Server-side appearance read/write helpers.</td></tr><tr><td><a href="#clothing-client">Clothing</a></td><td>Clothing — Client</td><td>Client</td><td>Client-side appearance menu and appearance read/write helpers.</td></tr><tr><td><a href="#dialogue-client">Dialogue</a></td><td>Dialogue — Client</td><td>Client</td><td>NPC dialogue module with branching conversations and selectable responses.</td></tr><tr><td><a href="#dispatch-server">Dispatch</a></td><td>Dispatch — Server</td><td>Server</td><td>Send dispatch alerts from server-side resources.</td></tr><tr><td><a href="#dispatch-client">Dispatch</a></td><td>Dispatch — Client</td><td>Client</td><td>Send dispatch alerts from the client, including title, message, jobs, coords and blip settings.</td></tr><tr><td><a href="#doorlock-server">Doorlock</a></td><td>Doorlock — Server</td><td>Server</td><td>Toggle a door lock state from the server.</td></tr><tr><td><a href="#doorlock-client">Doorlock</a></td><td>Doorlock — Client</td><td>Client</td><td>Read closest door information from the client.</td></tr><tr><td><a href="#fuel-client">Fuel</a></td><td>Fuel — Client</td><td>Client</td><td>Client-side vehicle fuel getter/setter.</td></tr><tr><td><a href="#helptext-server">HelpText</a></td><td>HelpText — Server</td><td>Server</td><td>Show or hide help text for a specific player.</td></tr><tr><td><a href="#helptext-client">HelpText</a></td><td>HelpText — Client</td><td>Client</td><td>Show or hide help text for the local player.</td></tr><tr><td><a href="#housing-client">Housing</a></td><td>Housing — Client</td><td>Client</td><td>Housing integration events for entering/exiting properties.</td></tr><tr><td><a href="#input-client">Input</a></td><td>Input — Client</td><td>Client</td><td>Input dialog prompts with ox_lib/lation/qb-input compatible formats.</td></tr><tr><td><a href="#locales-shared">Locales</a></td><td>Locales — Shared</td><td>Shared</td><td>Localized string translations through JSON locale files.</td></tr><tr><td><a href="#menu-client">Menu</a></td><td>Menu — Client</td><td>Client</td><td>Client-side context/list menu wrapper.</td></tr><tr><td><a href="#notify-server">Notify</a></td><td>Notify — Server</td><td>Server</td><td>Send normalized notifications to a specific player.</td></tr><tr><td><a href="#notify-client">Notify</a></td><td>Notify — Client</td><td>Client</td><td>Send normalized notifications to the local player.</td></tr><tr><td><a href="#phone-server">Phone</a></td><td>Phone — Server</td><td>Server</td><td>Phone resource detection, player phone lookup and server-side emails.</td></tr><tr><td><a href="#phone-client">Phone</a></td><td>Phone — Client</td><td>Client</td><td>Phone resource detection and client-side email sending.</td></tr><tr><td><a href="#progressbar-client">ProgressBar</a></td><td>Progress Bar — Client</td><td>Client</td><td>Client-side progressbar wrapper with duration, cancel, disable, anim and prop options.</td></tr><tr><td><a href="#shops-server">Shops</a></td><td>Shops — Server</td><td>Server</td><td>Register and open shop definitions from the server.</td></tr><tr><td><a href="#shops-client">Shops</a></td><td>Shops — Client</td><td>Client</td><td>Open a shop definition from the client.</td></tr><tr><td><a href="#skills-server">Skills</a></td><td>Skills — Server</td><td>Server</td><td>Server-side XP and skill levels, including creation, read, add, set and XP formula helpers.</td></tr><tr><td><a href="#skills-client">Skills</a></td><td>Skills — Client</td><td>Client</td><td>Client-side skill read helpers and local skill definition creation.</td></tr><tr><td><a href="#target-client">Target</a></td><td>Target — Client</td><td>Client</td><td>Targeting wrapper for zones, entities, models, global player/vehicle options and interaction utilities.</td></tr><tr><td><a href="#vehiclekey-client">VehicleKey</a></td><td>Vehicle Key — Client</td><td>Client</td><td>Client-side vehicle key give/remove helper.</td></tr><tr><td><a href="#version-server">Version</a></td><td>Version — Server</td><td>Server</td><td>Internal version checking at resource startup. No public API is exposed.</td></tr><tr><td><a href="#weather-client">Weather</a></td><td>Weather — Client</td><td>Client</td><td>Client-side weather sync toggle.</td></tr><tr><td><a href="#zones-client">Zones</a></td><td>Zones — Client</td><td>Client</td><td>Zone creation and management wrapper for box, sphere and poly zones.</td></tr></tbody>
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Page</th>
+              <th>Side</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#framework-server">Framework</a></td>
+              <td>Framework — Server</td>
+              <td>Server</td>
+              <td>Server-side spelerdata, jobs, duty, metadata, accounts, stress/hunger/thirst, revive en job counts.
+              </td>
+            </tr>
+            <tr>
+              <td><a href="#framework-client">Framework</a></td>
+              <td>Framework — Client</td>
+              <td>Client</td>
+              <td>Client-side player state, player job data, metadata, inventory fallbacks, account balance, death
+                state, vehicle props and job counts.</td>
+            </tr>
+            <tr>
+              <td><a href="#inventory-server">Inventory</a></td>
+              <td>Inventory — Server</td>
+              <td>Server</td>
+              <td>Server-side inventory functies voor items, metadata, stashes, shops, trunks en player inventory
+                management.</td>
+            </tr>
+            <tr>
+              <td><a href="#inventory-client">Inventory</a></td>
+              <td>Inventory — Client</td>
+              <td>Client</td>
+              <td>Client-side item checks, item counts, player inventory, registered items and image helpers.</td>
+            </tr>
+            <tr>
+              <td><a href="#banking-server">Banking</a></td>
+              <td>Banking — Server</td>
+              <td>Server</td>
+              <td>Server-side account money management.</td>
+            </tr>
+            <tr>
+              <td><a href="#bossmenu-server">BossMenu</a></td>
+              <td>Boss Menu — Server</td>
+              <td>Server</td>
+              <td>Open boss menu flows from server-side code for a target source and job.</td>
+            </tr>
+            <tr>
+              <td><a href="#bossmenu-client">BossMenu</a></td>
+              <td>Boss Menu — Client</td>
+              <td>Client</td>
+              <td>Open boss menu flows from client-side code.</td>
+            </tr>
+            <tr>
+              <td><a href="#clothing-server">Clothing</a></td>
+              <td>Clothing — Server</td>
+              <td>Server</td>
+              <td>Server-side appearance read/write helpers.</td>
+            </tr>
+            <tr>
+              <td><a href="#clothing-client">Clothing</a></td>
+              <td>Clothing — Client</td>
+              <td>Client</td>
+              <td>Client-side appearance menu and appearance read/write helpers.</td>
+            </tr>
+            <tr>
+              <td><a href="#dialogue-client">Dialogue</a></td>
+              <td>Dialogue — Client</td>
+              <td>Client</td>
+              <td>NPC dialogue module with branching conversations and selectable responses.</td>
+            </tr>
+            <tr>
+              <td><a href="#dispatch-server">Dispatch</a></td>
+              <td>Dispatch — Server</td>
+              <td>Server</td>
+              <td>Send dispatch alerts from server-side resources.</td>
+            </tr>
+            <tr>
+              <td><a href="#dispatch-client">Dispatch</a></td>
+              <td>Dispatch — Client</td>
+              <td>Client</td>
+              <td>Send dispatch alerts from the client, including title, message, jobs, coords and blip settings.</td>
+            </tr>
+            <tr>
+              <td><a href="#doorlock-server">Doorlock</a></td>
+              <td>Doorlock — Server</td>
+              <td>Server</td>
+              <td>Toggle a door lock state from the server.</td>
+            </tr>
+            <tr>
+              <td><a href="#doorlock-client">Doorlock</a></td>
+              <td>Doorlock — Client</td>
+              <td>Client</td>
+              <td>Read closest door information from the client.</td>
+            </tr>
+            <tr>
+              <td><a href="#fuel-client">Fuel</a></td>
+              <td>Fuel — Client</td>
+              <td>Client</td>
+              <td>Client-side vehicle fuel getter/setter.</td>
+            </tr>
+            <tr>
+              <td><a href="#helptext-server">HelpText</a></td>
+              <td>HelpText — Server</td>
+              <td>Server</td>
+              <td>Show or hide help text for a specific player.</td>
+            </tr>
+            <tr>
+              <td><a href="#helptext-client">HelpText</a></td>
+              <td>HelpText — Client</td>
+              <td>Client</td>
+              <td>Show or hide help text for the local player.</td>
+            </tr>
+            <tr>
+              <td><a href="#housing-client">Housing</a></td>
+              <td>Housing — Client</td>
+              <td>Client</td>
+              <td>Housing integration events for entering/exiting properties.</td>
+            </tr>
+            <tr>
+              <td><a href="#input-client">Input</a></td>
+              <td>Input — Client</td>
+              <td>Client</td>
+              <td>Input dialog prompts with ox_lib/lation/qb-input compatible formats.</td>
+            </tr>
+            <tr>
+              <td><a href="#locales-shared">Locales</a></td>
+              <td>Locales — Shared</td>
+              <td>Shared</td>
+              <td>Localized string translations through JSON locale files.</td>
+            </tr>
+            <tr>
+              <td><a href="#menu-client">Menu</a></td>
+              <td>Menu — Client</td>
+              <td>Client</td>
+              <td>Client-side context/list menu wrapper.</td>
+            </tr>
+            <tr>
+              <td><a href="#notify-server">Notify</a></td>
+              <td>Notify — Server</td>
+              <td>Server</td>
+              <td>Send normalized notifications to a specific player.</td>
+            </tr>
+            <tr>
+              <td><a href="#notify-client">Notify</a></td>
+              <td>Notify — Client</td>
+              <td>Client</td>
+              <td>Send normalized notifications to the local player.</td>
+            </tr>
+            <tr>
+              <td><a href="#phone-server">Phone</a></td>
+              <td>Phone — Server</td>
+              <td>Server</td>
+              <td>Phone resource detection, player phone lookup and server-side emails.</td>
+            </tr>
+            <tr>
+              <td><a href="#phone-client">Phone</a></td>
+              <td>Phone — Client</td>
+              <td>Client</td>
+              <td>Phone resource detection and client-side email sending.</td>
+            </tr>
+            <tr>
+              <td><a href="#progressbar-client">ProgressBar</a></td>
+              <td>Progress Bar — Client</td>
+              <td>Client</td>
+              <td>Client-side progressbar wrapper with duration, cancel, disable, anim and prop options.</td>
+            </tr>
+            <tr>
+              <td><a href="#shops-server">Shops</a></td>
+              <td>Shops — Server</td>
+              <td>Server</td>
+              <td>Register and open shop definitions from the server.</td>
+            </tr>
+            <tr>
+              <td><a href="#shops-client">Shops</a></td>
+              <td>Shops — Client</td>
+              <td>Client</td>
+              <td>Open a shop definition from the client.</td>
+            </tr>
+            <tr>
+              <td><a href="#skills-server">Skills</a></td>
+              <td>Skills — Server</td>
+              <td>Server</td>
+              <td>Server-side XP and skill levels, including creation, read, add, set and XP formula helpers.</td>
+            </tr>
+            <tr>
+              <td><a href="#skills-client">Skills</a></td>
+              <td>Skills — Client</td>
+              <td>Client</td>
+              <td>Client-side skill read helpers and local skill definition creation.</td>
+            </tr>
+            <tr>
+              <td><a href="#target-client">Target</a></td>
+              <td>Target — Client</td>
+              <td>Client</td>
+              <td>Targeting wrapper for zones, entities, models, global player/vehicle options and interaction
+                utilities.</td>
+            </tr>
+            <tr>
+              <td><a href="#vehiclekey-client">VehicleKey</a></td>
+              <td>Vehicle Key — Client</td>
+              <td>Client</td>
+              <td>Client-side vehicle key give/remove helper.</td>
+            </tr>
+            <tr>
+              <td><a href="#version-server">Version</a></td>
+              <td>Version — Server</td>
+              <td>Server</td>
+              <td>Internal version checking at resource startup. No public API is exposed.</td>
+            </tr>
+            <tr>
+              <td><a href="#weather-client">Weather</a></td>
+              <td>Weather — Client</td>
+              <td>Client</td>
+              <td>Client-side weather sync toggle.</td>
+            </tr>
+            <tr>
+              <td><a href="#zones-client">Zones</a></td>
+              <td>Zones — Client</td>
+              <td>Client</td>
+              <td>Zone creation and management wrapper for box, sphere and poly zones.</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
-      
-<section id="overview" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client &amp; Server</span>
-    <h2>Modules Overview</h2>
-  </div>
-  <p>Modules zijn bridge API’s die framework/resource-specifieke logica achter één interface zetten. Gebruik ze vanuit BrunxBridge in plaats van directe framework calls.</p>
-  
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+
+      <section id="overview" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client &amp; Server</span>
+          <h2>Modules Overview</h2>
+        </div>
+        <p>Modules zijn bridge API’s die framework/resource-specifieke logica achter één interface zetten. Gebruik ze
+          vanuit BrunxBridge in plaats van directe framework calls.</p>
+
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 
 Bridge.Framework.GetPlayerName()
 Bridge.Inventory.AddItem(source, &#x27;bread&#x27;, 1)
@@ -111,211 +444,351 @@ Bridge.Notify.SendNotification(source, &#x27;BrunxScript&#x27;, &#x27;Actie gelu
 
 local Inventory = exports[&#x27;brnx_bridge&#x27;]:Inventory()
 Inventory.AddItem(source, &#x27;bread&#x27;, 1)</code></pre>
-</section>
+      </section>
 
-<section id="framework-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Framework — Server</h2>
-  </div>
-  <p>Server-side spelerdata, jobs, duty, metadata, accounts, stress/hunger/thirst, revive en job counts.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>GetIsFrameworkAdmin</code><span>Server</span></div><div class="api-card"><code>GetPlayerIdentifier</code><span>Server</span></div><div class="api-card"><code>GetPlayer</code><span>Server</span></div><div class="api-card"><code>GetPlayerByIdentifier</code><span>Server</span></div><div class="api-card"><code>GetPlayerSource</code><span>Server</span></div><div class="api-card"><code>GetFrameworkJobs</code><span>Server</span></div><div class="api-card"><code>GetPlayerName</code><span>Server</span></div><div class="api-card"><code>GetPlayerDob</code><span>Server</span></div><div class="api-card"><code>GetPlayers</code><span>Server</span></div><div class="api-card"><code>GetPlayerJobData</code><span>Server</span></div><div class="api-card"><code>GetPlayerDuty</code><span>Server</span></div><div class="api-card"><code>SetPlayerDuty</code><span>Server</span></div><div class="api-card"><code>SetPlayerJob</code><span>Server</span></div><div class="api-card"><code>GetPlayerPhone</code><span>Server</span></div><div class="api-card"><code>GetPlayerGang</code><span>Server</span></div><div class="api-card"><code>GetPlayersByJob</code><span>Server</span></div><div class="api-card"><code>GetPlayerMetadata</code><span>Server</span></div><div class="api-card"><code>SetPlayerMetadata</code><span>Server</span></div><div class="api-card"><code>AddStress</code><span>Server</span></div><div class="api-card"><code>RemoveStress</code><span>Server</span></div><div class="api-card"><code>AddHunger</code><span>Server</span></div><div class="api-card"><code>AddThirst</code><span>Server</span></div><div class="api-card"><code>GetHunger</code><span>Server</span></div><div class="api-card"><code>GetThirst</code><span>Server</span></div><div class="api-card"><code>GetIsPlayerDead</code><span>Server</span></div><div class="api-card"><code>RevivePlayer</code><span>Server</span></div><div class="api-card"><code>AddAccountBalance</code><span>Server</span></div><div class="api-card"><code>RemoveAccountBalance</code><span>Server</span></div><div class="api-card"><code>GetAccountBalance</code><span>Server</span></div><div class="api-card"><code>GetJobCount</code><span>Server</span></div><div class="api-card"><code>GetJobCountTotal</code><span>Server</span></div><div class="api-card"><code>GetPlayerSourcesByJob</code><span>Server</span></div><div class="api-card"><code>AddJobCount</code><span>Server</span></div><div class="api-card"><code>SearchJobCountBySource</code><span>Server</span></div><div class="api-card"><code>RemoveJobCount</code><span>Server</span></div></div>
-  <h3>Events</h3><ul><li><code>brnx_bridge:Server:OnPlayerLoaded</code></li><li><code>brnx_bridge:Server:OnPlayerUnload</code></li><li><code>brnx_bridge:Server:OnPlayerJobChange</code></li></ul>
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="framework-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Framework — Server</h2>
+        </div>
+        <p>Server-side spelerdata, jobs, duty, metadata, accounts, stress/hunger/thirst, revive en job counts.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>GetIsFrameworkAdmin</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerIdentifier</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayer</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerByIdentifier</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerSource</code><span>Server</span></div>
+          <div class="api-card"><code>GetFrameworkJobs</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerName</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerDob</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayers</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerJobData</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerDuty</code><span>Server</span></div>
+          <div class="api-card"><code>SetPlayerDuty</code><span>Server</span></div>
+          <div class="api-card"><code>SetPlayerJob</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerPhone</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerGang</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayersByJob</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerMetadata</code><span>Server</span></div>
+          <div class="api-card"><code>SetPlayerMetadata</code><span>Server</span></div>
+          <div class="api-card"><code>AddStress</code><span>Server</span></div>
+          <div class="api-card"><code>RemoveStress</code><span>Server</span></div>
+          <div class="api-card"><code>AddHunger</code><span>Server</span></div>
+          <div class="api-card"><code>AddThirst</code><span>Server</span></div>
+          <div class="api-card"><code>GetHunger</code><span>Server</span></div>
+          <div class="api-card"><code>GetThirst</code><span>Server</span></div>
+          <div class="api-card"><code>GetIsPlayerDead</code><span>Server</span></div>
+          <div class="api-card"><code>RevivePlayer</code><span>Server</span></div>
+          <div class="api-card"><code>AddAccountBalance</code><span>Server</span></div>
+          <div class="api-card"><code>RemoveAccountBalance</code><span>Server</span></div>
+          <div class="api-card"><code>GetAccountBalance</code><span>Server</span></div>
+          <div class="api-card"><code>GetJobCount</code><span>Server</span></div>
+          <div class="api-card"><code>GetJobCountTotal</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerSourcesByJob</code><span>Server</span></div>
+          <div class="api-card"><code>AddJobCount</code><span>Server</span></div>
+          <div class="api-card"><code>SearchJobCountBySource</code><span>Server</span></div>
+          <div class="api-card"><code>RemoveJobCount</code><span>Server</span></div>
+        </div>
+        <h3>Events</h3>
+        <ul>
+          <li><code>brnx_bridge:Server:OnPlayerLoaded</code></li>
+          <li><code>brnx_bridge:Server:OnPlayerUnload</code></li>
+          <li><code>brnx_bridge:Server:OnPlayerJobChange</code></li>
+        </ul>
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 
 local player = Bridge.Framework.GetPlayer(source)
 local job = Bridge.Framework.GetPlayerJobData(source)
 local isPolice = job and job.name == &#x27;police&#x27;</code></pre>
-</section>
+      </section>
 
-<section id="framework-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Framework — Client</h2>
-  </div>
-  <p>Client-side player state, player job data, metadata, inventory fallbacks, account balance, death state, vehicle props and job counts.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>GetIsPlayerLoaded</code><span>Client</span></div><div class="api-card"><code>GetPlayerIdentifier</code><span>Client</span></div><div class="api-card"><code>GetPlayerName</code><span>Client</span></div><div class="api-card"><code>GetPlayerJobData</code><span>Client</span></div><div class="api-card"><code>GetPlayerDob</code><span>Client</span></div><div class="api-card"><code>GetPlayerMetaData</code><span>Client</span></div><div class="api-card"><code>GetHunger</code><span>Client</span></div><div class="api-card"><code>GetThirst</code><span>Client</span></div><div class="api-card"><code>HasItem</code><span>Client</span></div><div class="api-card"><code>GetItemCount</code><span>Client</span></div><div class="api-card"><code>GetPlayerInventory</code><span>Client</span></div><div class="api-card"><code>GetAccountBalance</code><span>Client</span></div><div class="api-card"><code>GetIsPlayerDead</code><span>Client</span></div><div class="api-card"><code>GetVehicleProperties</code><span>Client</span></div><div class="api-card"><code>SetVehicleProperties</code><span>Client</span></div><div class="api-card"><code>GetJobCount</code><span>Client</span></div><div class="api-card"><code>GetJobCountTotal</code><span>Client</span></div></div>
-  <h3>Events</h3><ul><li><code>brnx_bridge:Client:OnPlayerLoaded</code></li><li><code>brnx_bridge:Client:OnPlayerUnload</code></li><li><code>brnx_bridge:Client:OnPlayerJobUpdate</code></li></ul>
-  <h3>Deprecated</h3><p>Gebruik deze alleen voor backwards compatibility:</p><ul><li><code>GetPlayerJob</code></li></ul>
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="framework-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Framework — Client</h2>
+        </div>
+        <p>Client-side player state, player job data, metadata, inventory fallbacks, account balance, death state,
+          vehicle props and job counts.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>GetIsPlayerLoaded</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerIdentifier</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerName</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerJobData</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerDob</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerMetaData</code><span>Client</span></div>
+          <div class="api-card"><code>GetHunger</code><span>Client</span></div>
+          <div class="api-card"><code>GetThirst</code><span>Client</span></div>
+          <div class="api-card"><code>HasItem</code><span>Client</span></div>
+          <div class="api-card"><code>GetItemCount</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerInventory</code><span>Client</span></div>
+          <div class="api-card"><code>GetAccountBalance</code><span>Client</span></div>
+          <div class="api-card"><code>GetIsPlayerDead</code><span>Client</span></div>
+          <div class="api-card"><code>GetVehicleProperties</code><span>Client</span></div>
+          <div class="api-card"><code>SetVehicleProperties</code><span>Client</span></div>
+          <div class="api-card"><code>GetJobCount</code><span>Client</span></div>
+          <div class="api-card"><code>GetJobCountTotal</code><span>Client</span></div>
+        </div>
+        <h3>Events</h3>
+        <ul>
+          <li><code>brnx_bridge:Client:OnPlayerLoaded</code></li>
+          <li><code>brnx_bridge:Client:OnPlayerUnload</code></li>
+          <li><code>brnx_bridge:Client:OnPlayerJobUpdate</code></li>
+        </ul>
+        <h3>Deprecated</h3>
+        <p>Gebruik deze alleen voor backwards compatibility:</p>
+        <ul>
+          <li><code>GetPlayerJob</code></li>
+        </ul>
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 
 local loaded = Bridge.Framework.GetIsPlayerLoaded()
 local job = Bridge.Framework.GetPlayerJobData()
 local name = Bridge.Framework.GetPlayerName()</code></pre>
-</section>
+      </section>
 
-<section id="inventory-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Inventory — Server</h2>
-  </div>
-  <p>Server-side inventory functies voor items, metadata, stashes, shops, trunks en player inventory management.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>AddItem</code><span>Server</span></div><div class="api-card"><code>RemoveItem</code><span>Server</span></div><div class="api-card"><code>GetItemCount</code><span>Server</span></div><div class="api-card"><code>HasItem</code><span>Server</span></div><div class="api-card"><code>CanCarryItem</code><span>Server</span></div><div class="api-card"><code>GetPlayerInventory</code><span>Server</span></div><div class="api-card"><code>GetItemBySlot</code><span>Server</span></div><div class="api-card"><code>SetMetadata</code><span>Server</span></div><div class="api-card"><code>GetItemInfo</code><span>Server</span></div><div class="api-card"><code>Items</code><span>Server</span></div><div class="api-card"><code>OpenStash</code><span>Server</span></div><div class="api-card"><code>RegisterStash</code><span>Server</span></div><div class="api-card"><code>ClearStash</code><span>Server</span></div><div class="api-card"><code>UpdatePlate</code><span>Server</span></div><div class="api-card"><code>OpenShop</code><span>Server</span></div><div class="api-card"><code>RegisterShop</code><span>Server</span></div><div class="api-card"><code>AddTrunkItems</code><span>Server</span></div><div class="api-card"><code>OpenPlayerInventory</code><span>Server</span></div><div class="api-card"><code>GetImagePath</code><span>Server</span></div><div class="api-card"><code>StripPNG</code><span>Server</span></div><div class="api-card"><code>StripWebp</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="inventory-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Inventory — Server</h2>
+        </div>
+        <p>Server-side inventory functies voor items, metadata, stashes, shops, trunks en player inventory management.
+        </p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>AddItem</code><span>Server</span></div>
+          <div class="api-card"><code>RemoveItem</code><span>Server</span></div>
+          <div class="api-card"><code>GetItemCount</code><span>Server</span></div>
+          <div class="api-card"><code>HasItem</code><span>Server</span></div>
+          <div class="api-card"><code>CanCarryItem</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerInventory</code><span>Server</span></div>
+          <div class="api-card"><code>GetItemBySlot</code><span>Server</span></div>
+          <div class="api-card"><code>SetMetadata</code><span>Server</span></div>
+          <div class="api-card"><code>GetItemInfo</code><span>Server</span></div>
+          <div class="api-card"><code>Items</code><span>Server</span></div>
+          <div class="api-card"><code>OpenStash</code><span>Server</span></div>
+          <div class="api-card"><code>RegisterStash</code><span>Server</span></div>
+          <div class="api-card"><code>ClearStash</code><span>Server</span></div>
+          <div class="api-card"><code>UpdatePlate</code><span>Server</span></div>
+          <div class="api-card"><code>OpenShop</code><span>Server</span></div>
+          <div class="api-card"><code>RegisterShop</code><span>Server</span></div>
+          <div class="api-card"><code>AddTrunkItems</code><span>Server</span></div>
+          <div class="api-card"><code>OpenPlayerInventory</code><span>Server</span></div>
+          <div class="api-card"><code>GetImagePath</code><span>Server</span></div>
+          <div class="api-card"><code>StripPNG</code><span>Server</span></div>
+          <div class="api-card"><code>StripWebp</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 
 if Bridge.Inventory.HasItem(source, &#x27;hacking_laptop&#x27;, 1) then
     Bridge.Inventory.RemoveItem(source, &#x27;hacking_laptop&#x27;, 1)
     Bridge.Inventory.AddItem(source, &#x27;chimera_vial&#x27;, 1, { quality = 100 })
 end</code></pre>
-</section>
+      </section>
 
-<section id="inventory-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Inventory — Client</h2>
-  </div>
-  <p>Client-side item checks, item counts, player inventory, registered items and image helpers.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>GetItemInfo</code><span>Client</span></div><div class="api-card"><code>HasItem</code><span>Client</span></div><div class="api-card"><code>GetItemCount</code><span>Client</span></div><div class="api-card"><code>GetPlayerInventory</code><span>Client</span></div><div class="api-card"><code>Items</code><span>Client</span></div><div class="api-card"><code>GetImagePath</code><span>Client</span></div><div class="api-card"><code>StripPNG</code><span>Client</span></div><div class="api-card"><code>StripWebp</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="inventory-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Inventory — Client</h2>
+        </div>
+        <p>Client-side item checks, item counts, player inventory, registered items and image helpers.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>GetItemInfo</code><span>Client</span></div>
+          <div class="api-card"><code>HasItem</code><span>Client</span></div>
+          <div class="api-card"><code>GetItemCount</code><span>Client</span></div>
+          <div class="api-card"><code>GetPlayerInventory</code><span>Client</span></div>
+          <div class="api-card"><code>Items</code><span>Client</span></div>
+          <div class="api-card"><code>GetImagePath</code><span>Client</span></div>
+          <div class="api-card"><code>StripPNG</code><span>Client</span></div>
+          <div class="api-card"><code>StripWebp</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 
 local hasLaptop = Bridge.Inventory.HasItem(&#x27;hacking_laptop&#x27;, 1)
 local count = Bridge.Inventory.GetItemCount(&#x27;bandage&#x27;)</code></pre>
-</section>
+      </section>
 
-<section id="banking-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Banking — Server</h2>
-  </div>
-  <p>Server-side account money management.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>GetAccountMoney</code><span>Server</span></div><div class="api-card"><code>AddAccountMoney</code><span>Server</span></div><div class="api-card"><code>RemoveAccountMoney</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="banking-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Banking — Server</h2>
+        </div>
+        <p>Server-side account money management.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>GetAccountMoney</code><span>Server</span></div>
+          <div class="api-card"><code>AddAccountMoney</code><span>Server</span></div>
+          <div class="api-card"><code>RemoveAccountMoney</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 
 local balance = Bridge.Banking.GetAccountMoney(&#x27;society_police&#x27;)
 Bridge.Banking.AddAccountMoney(&#x27;society_police&#x27;, 5000)</code></pre>
-</section>
+      </section>
 
-<section id="bossmenu-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Boss Menu — Server</h2>
-  </div>
-  <p>Open boss menu flows from server-side code for a target source and job.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>OpenBossMenu</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="bossmenu-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Boss Menu — Server</h2>
+        </div>
+        <p>Open boss menu flows from server-side code for a target source and job.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>OpenBossMenu</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.BossMenu.OpenBossMenu(source, &#x27;police&#x27;, &#x27;leo&#x27;)</code></pre>
-</section>
+      </section>
 
-<section id="bossmenu-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Boss Menu — Client</h2>
-  </div>
-  <p>Open boss menu flows from client-side code.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>OpenBossMenu</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="bossmenu-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Boss Menu — Client</h2>
+        </div>
+        <p>Open boss menu flows from client-side code.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>OpenBossMenu</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.BossMenu.OpenBossMenu()</code></pre>
-</section>
+      </section>
 
-<section id="clothing-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Clothing — Server</h2>
-  </div>
-  <p>Server-side appearance read/write helpers.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>IsMale</code><span>Server</span></div><div class="api-card"><code>GetAppearance</code><span>Server</span></div><div class="api-card"><code>SetAppearance</code><span>Server</span></div><div class="api-card"><code>SetAppearanceExt</code><span>Server</span></div><div class="api-card"><code>RestoreAppearance</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="clothing-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Clothing — Server</h2>
+        </div>
+        <p>Server-side appearance read/write helpers.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>IsMale</code><span>Server</span></div>
+          <div class="api-card"><code>GetAppearance</code><span>Server</span></div>
+          <div class="api-card"><code>SetAppearance</code><span>Server</span></div>
+          <div class="api-card"><code>SetAppearanceExt</code><span>Server</span></div>
+          <div class="api-card"><code>RestoreAppearance</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local appearance = Bridge.Clothing.GetAppearance(source)
 Bridge.Clothing.SetAppearance(source, appearance)</code></pre>
-</section>
+      </section>
 
-<section id="clothing-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Clothing — Client</h2>
-  </div>
-  <p>Client-side appearance menu and appearance read/write helpers.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>OpenMenu</code><span>Client</span></div><div class="api-card"><code>IsMale</code><span>Client</span></div><div class="api-card"><code>GetAppearance</code><span>Client</span></div><div class="api-card"><code>SetAppearance</code><span>Client</span></div><div class="api-card"><code>RestoreAppearance</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="clothing-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Clothing — Client</h2>
+        </div>
+        <p>Client-side appearance menu and appearance read/write helpers.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>OpenMenu</code><span>Client</span></div>
+          <div class="api-card"><code>IsMale</code><span>Client</span></div>
+          <div class="api-card"><code>GetAppearance</code><span>Client</span></div>
+          <div class="api-card"><code>SetAppearance</code><span>Client</span></div>
+          <div class="api-card"><code>RestoreAppearance</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Clothing.OpenMenu()
 local appearance = Bridge.Clothing.GetAppearance()</code></pre>
-</section>
+      </section>
 
-<section id="dialogue-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Dialogue — Client</h2>
-  </div>
-  <p>NPC dialogue module with branching conversations and selectable responses.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>Open</code><span>Client</span></div><div class="api-card"><code>Close</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="dialogue-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Dialogue — Client</h2>
+        </div>
+        <p>NPC dialogue module with branching conversations and selectable responses.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>Open</code><span>Client</span></div>
+          <div class="api-card"><code>Close</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Dialogue.Open(&#x27;doctor&#x27;, {
   { text = &#x27;Waar heb je last van?&#x27;, responses = {
     { text = &#x27;Ik wil hulp&#x27;, action = &#x27;accept&#x27; },
     { text = &#x27;Laat maar&#x27;, action = &#x27;close&#x27; }
   }}
 })</code></pre>
-</section>
+      </section>
 
-<section id="dispatch-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Dispatch — Server</h2>
-  </div>
-  <p>Send dispatch alerts from server-side resources.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>SendAlert</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="dispatch-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Dispatch — Server</h2>
+        </div>
+        <p>Send dispatch alerts from server-side resources.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>SendAlert</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Dispatch.SendAlert({
   title = &#x27;Project Chimera&#x27;,
   message = &#x27;Alarm bij het asylum.&#x27;,
   job = &#x27;police&#x27;,
   coords = vector3(0.0, 0.0, 0.0)
 })</code></pre>
-</section>
+      </section>
 
-<section id="dispatch-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Dispatch — Client</h2>
-  </div>
-  <p>Send dispatch alerts from the client, including title, message, jobs, coords and blip settings.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>SendAlert</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="dispatch-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Dispatch — Client</h2>
+        </div>
+        <p>Send dispatch alerts from the client, including title, message, jobs, coords and blip settings.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>SendAlert</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Dispatch.SendAlert({
   title = &#x27;Melding&#x27;,
   message = &#x27;Verdachte situatie.&#x27;,
@@ -323,147 +796,182 @@ Bridge.Dispatch.SendAlert({
   coords = GetEntityCoords(PlayerPedId()),
   blip = { sprite = 161, colour = 1, scale = 1.0, flash = true, time = 30000 }
 })</code></pre>
-</section>
+      </section>
 
-<section id="doorlock-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Doorlock — Server</h2>
-  </div>
-  <p>Toggle a door lock state from the server.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>ToggleDoorLock</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="doorlock-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Doorlock — Server</h2>
+        </div>
+        <p>Toggle a door lock state from the server.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>ToggleDoorLock</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Doorlock.ToggleDoorLock(&#x27;asylum_lab_door&#x27;)</code></pre>
-</section>
+      </section>
 
-<section id="doorlock-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Doorlock — Client</h2>
-  </div>
-  <p>Read closest door information from the client.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>GetClosestDoor</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="doorlock-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Doorlock — Client</h2>
+        </div>
+        <p>Read closest door information from the client.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>GetClosestDoor</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local door = Bridge.Doorlock.GetClosestDoor()</code></pre>
-</section>
+      </section>
 
-<section id="fuel-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Fuel — Client</h2>
-  </div>
-  <p>Client-side vehicle fuel getter/setter.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>GetFuel</code><span>Client</span></div><div class="api-card"><code>SetFuel</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="fuel-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Fuel — Client</h2>
+        </div>
+        <p>Client-side vehicle fuel getter/setter.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>GetFuel</code><span>Client</span></div>
+          <div class="api-card"><code>SetFuel</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 Bridge.Fuel.SetFuel(vehicle, 100.0)</code></pre>
-</section>
+      </section>
 
-<section id="helptext-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>HelpText — Server</h2>
-  </div>
-  <p>Show or hide help text for a specific player.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>ShowHelpText</code><span>Server</span></div><div class="api-card"><code>HideHelpText</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="helptext-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>HelpText — Server</h2>
+        </div>
+        <p>Show or hide help text for a specific player.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>ShowHelpText</code><span>Server</span></div>
+          <div class="api-card"><code>HideHelpText</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.HelpText.ShowHelpText(source, &#x27;[E] Interactie&#x27;)
 Bridge.HelpText.HideHelpText(source)</code></pre>
-</section>
+      </section>
 
-<section id="helptext-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>HelpText — Client</h2>
-  </div>
-  <p>Show or hide help text for the local player.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>ShowHelpText</code><span>Client</span></div><div class="api-card"><code>HideHelpText</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="helptext-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>HelpText — Client</h2>
+        </div>
+        <p>Show or hide help text for the local player.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>ShowHelpText</code><span>Client</span></div>
+          <div class="api-card"><code>HideHelpText</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.HelpText.ShowHelpText(&#x27;[E] Interactie&#x27;)
 Bridge.HelpText.HideHelpText()</code></pre>
-</section>
+      </section>
 
-<section id="housing-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Housing — Client</h2>
-  </div>
-  <p>Housing integration events for entering/exiting properties.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div></div>
-  <h3>Events</h3><ul><li><code>brnx_bridge:Client:OnPlayerInside</code></li></ul>
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>RegisterNetEvent(&#x27;brnx_bridge:Client:OnPlayerInside&#x27;, function(isInside, propertyData)
+      <section id="housing-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Housing — Client</h2>
+        </div>
+        <p>Housing integration events for entering/exiting properties.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+        </div>
+        <h3>Events</h3>
+        <ul>
+          <li><code>brnx_bridge:Client:OnPlayerInside</code></li>
+        </ul>
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>RegisterNetEvent(&#x27;brnx_bridge:Client:OnPlayerInside&#x27;, function(isInside, propertyData)
     print(&#x27;Inside property:&#x27;, isInside)
 end)</code></pre>
-</section>
+      </section>
 
-<section id="input-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Input — Client</h2>
-  </div>
-  <p>Input dialog prompts with ox_lib/lation/qb-input compatible formats.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>Open</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="input-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Input — Client</h2>
+        </div>
+        <p>Input dialog prompts with ox_lib/lation/qb-input compatible formats.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>Open</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local result = Bridge.Input.Open(&#x27;Player Info&#x27;, {
   { type = &#x27;input&#x27;, label = &#x27;Naam&#x27;, required = true },
   { type = &#x27;number&#x27;, label = &#x27;Leeftijd&#x27; }
 })</code></pre>
-</section>
+      </section>
 
-<section id="locales-shared" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Shared</span>
-    <h2>Locales — Shared</h2>
-  </div>
-  <p>Localized string translations through JSON locale files.</p>
-  <div class="api-grid"><div class="api-card"><code>Language.Locale</code><span>Shared</span></div></div>
-  
-  
-  <h3>Notes</h3><ul><li>Config: BridgeSharedConfig.Lang = auto/en/nl/etc.</li><li>Languages include nl, en, de, fr, es, it and many more.</li></ul>
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="locales-shared" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Shared</span>
+          <h2>Locales — Shared</h2>
+        </div>
+        <p>Localized string translations through JSON locale files.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>Language.Locale</code><span>Shared</span></div>
+        </div>
+
+
+        <h3>Notes</h3>
+        <ul>
+          <li>Config: BridgeSharedConfig.Lang = auto/en/nl/etc.</li>
+          <li>Languages include nl, en, de, fr, es, it and many more.</li>
+        </ul>
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local text = Bridge.Language.Locale(&#x27;welcome&#x27;, &#x27;Cas&#x27;)</code></pre>
-</section>
+      </section>
 
-<section id="menu-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Menu — Client</h2>
-  </div>
-  <p>Client-side context/list menu wrapper.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>Open</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="menu-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Menu — Client</h2>
+        </div>
+        <p>Client-side context/list menu wrapper.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>Open</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Menu.Open({
   id = &#x27;my_menu&#x27;,
   title = &#x27;Mijn Menu&#x27;,
@@ -471,89 +979,115 @@ Bridge.Menu.Open({
     { title = &#x27;Optie 1&#x27;, description = &#x27;Eerste optie&#x27;, onSelect = function() print(&#x27;ok&#x27;) end }
   }
 })</code></pre>
-</section>
+      </section>
 
-<section id="notify-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Notify — Server</h2>
-  </div>
-  <p>Send normalized notifications to a specific player.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>SendNotification</code><span>Server</span></div></div>
-  
-  <h3>Deprecated</h3><p>Gebruik deze alleen voor backwards compatibility:</p><ul><li><code>SendNotify</code></li></ul>
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="notify-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Notify — Server</h2>
+        </div>
+        <p>Send normalized notifications to a specific player.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>SendNotification</code><span>Server</span></div>
+        </div>
+
+        <h3>Deprecated</h3>
+        <p>Gebruik deze alleen voor backwards compatibility:</p>
+        <ul>
+          <li><code>SendNotify</code></li>
+        </ul>
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Notify.SendNotification(source, &#x27;BrunxScript&#x27;, &#x27;Actie gelukt.&#x27;, &#x27;success&#x27;, 5000)</code></pre>
-</section>
+      </section>
 
-<section id="notify-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Notify — Client</h2>
-  </div>
-  <p>Send normalized notifications to the local player.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>SendNotification</code><span>Client</span></div></div>
-  
-  <h3>Deprecated</h3><p>Gebruik deze alleen voor backwards compatibility:</p><ul><li><code>SendNotify</code></li></ul>
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="notify-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Notify — Client</h2>
+        </div>
+        <p>Send normalized notifications to the local player.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>SendNotification</code><span>Client</span></div>
+        </div>
+
+        <h3>Deprecated</h3>
+        <p>Gebruik deze alleen voor backwards compatibility:</p>
+        <ul>
+          <li><code>SendNotify</code></li>
+        </ul>
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Notify.SendNotification(&#x27;BrunxScript&#x27;, &#x27;Actie gelukt.&#x27;, &#x27;success&#x27;, 5000)</code></pre>
-</section>
+      </section>
 
-<section id="phone-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Phone — Server</h2>
-  </div>
-  <p>Phone resource detection, player phone lookup and server-side emails.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>GetPhoneName</code><span>Server</span></div><div class="api-card"><code>GetPlayerPhone</code><span>Server</span></div><div class="api-card"><code>SendEmail</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="phone-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Phone — Server</h2>
+        </div>
+        <p>Phone resource detection, player phone lookup and server-side emails.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>GetPhoneName</code><span>Server</span></div>
+          <div class="api-card"><code>GetPlayerPhone</code><span>Server</span></div>
+          <div class="api-card"><code>SendEmail</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Phone.SendEmail(source, {
   sender = &#x27;Meldkamer&#x27;,
   subject = &#x27;Nieuwe melding&#x27;,
   message = &#x27;Er staat een melding open.&#x27;
 })</code></pre>
-</section>
+      </section>
 
-<section id="phone-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Phone — Client</h2>
-  </div>
-  <p>Phone resource detection and client-side email sending.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>GetPhoneName</code><span>Client</span></div><div class="api-card"><code>SendEmail</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="phone-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Phone — Client</h2>
+        </div>
+        <p>Phone resource detection and client-side email sending.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>GetPhoneName</code><span>Client</span></div>
+          <div class="api-card"><code>SendEmail</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Phone.SendEmail({
   to = &#x27;player@email.com&#x27;,
   sender = &#x27;Politie&#x27;,
   subject = &#x27;Boete&#x27;,
   message = &#x27;Je hebt een boete ontvangen.&#x27;
 })</code></pre>
-</section>
+      </section>
 
-<section id="progressbar-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Progress Bar — Client</h2>
-  </div>
-  <p>Client-side progressbar wrapper with duration, cancel, disable, anim and prop options.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>Open</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="progressbar-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Progress Bar — Client</h2>
+        </div>
+        <p>Client-side progressbar wrapper with duration, cancel, disable, anim and prop options.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>Open</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.ProgressBar.Open({
   duration = 5000,
   label = &#x27;Zoeken...&#x27;,
@@ -562,146 +1096,200 @@ Bridge.ProgressBar.Open({
 }, function(cancelled)
   if not cancelled then print(&#x27;klaar&#x27;) end
 end)</code></pre>
-</section>
+      </section>
 
-<section id="shops-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Shops — Server</h2>
-  </div>
-  <p>Register and open shop definitions from the server.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>CreateShop</code><span>Server</span></div><div class="api-card"><code>OpenShop</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="shops-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Shops — Server</h2>
+        </div>
+        <p>Register and open shop definitions from the server.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>CreateShop</code><span>Server</span></div>
+          <div class="api-card"><code>OpenShop</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Shops.CreateShop(&#x27;asylum_shop&#x27;, { label = &#x27;Asylum Shop&#x27;, items = {} })
 Bridge.Shops.OpenShop(source, { label = &#x27;Asylum Shop&#x27;, items = {} })</code></pre>
-</section>
+      </section>
 
-<section id="shops-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Shops — Client</h2>
-  </div>
-  <p>Open a shop definition from the client.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>OpenShop</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="shops-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Shops — Client</h2>
+        </div>
+        <p>Open a shop definition from the client.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>OpenShop</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Shops.OpenShop({ label = &#x27;Shop&#x27;, items = {} })</code></pre>
-</section>
+      </section>
 
-<section id="skills-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Skills — Server</h2>
-  </div>
-  <p>Server-side XP and skill levels, including creation, read, add, set and XP formula helpers.</p>
-  <div class="api-grid"><div class="api-card"><code>Create</code><span>Server</span></div><div class="api-card"><code>GetResourceName</code><span>Server</span></div><div class="api-card"><code>GetSkillLevel</code><span>Server</span></div><div class="api-card"><code>GetXP</code><span>Server</span></div><div class="api-card"><code>AddXP</code><span>Server</span></div><div class="api-card"><code>SetSkillLevel</code><span>Server</span></div><div class="api-card"><code>SetXP</code><span>Server</span></div><div class="api-card"><code>GetXPForLevel</code><span>Server</span></div><div class="api-card"><code>GetXPRequiredForLevel</code><span>Server</span></div><div class="api-card"><code>GetScaledXP</code><span>Server</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="skills-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Skills — Server</h2>
+        </div>
+        <p>Server-side XP and skill levels, including creation, read, add, set and XP formula helpers.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>Create</code><span>Server</span></div>
+          <div class="api-card"><code>GetResourceName</code><span>Server</span></div>
+          <div class="api-card"><code>GetSkillLevel</code><span>Server</span></div>
+          <div class="api-card"><code>GetXP</code><span>Server</span></div>
+          <div class="api-card"><code>AddXP</code><span>Server</span></div>
+          <div class="api-card"><code>SetSkillLevel</code><span>Server</span></div>
+          <div class="api-card"><code>SetXP</code><span>Server</span></div>
+          <div class="api-card"><code>GetXPForLevel</code><span>Server</span></div>
+          <div class="api-card"><code>GetXPRequiredForLevel</code><span>Server</span></div>
+          <div class="api-card"><code>GetScaledXP</code><span>Server</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Skills.Create(&#x27;hacking&#x27;, 99, 50)
 local ok, level, xp = Bridge.Skills.AddXP(source, &#x27;hacking&#x27;, 100)</code></pre>
-</section>
+      </section>
 
-<section id="skills-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Skills — Client</h2>
-  </div>
-  <p>Client-side skill read helpers and local skill definition creation.</p>
-  <div class="api-grid"><div class="api-card"><code>GetSkillLevel</code><span>Client</span></div><div class="api-card"><code>GetXP</code><span>Client</span></div><div class="api-card"><code>GetXPForLevel</code><span>Client</span></div><div class="api-card"><code>GetXPRequiredForLevel</code><span>Client</span></div><div class="api-card"><code>GetScaledXP</code><span>Client</span></div><div class="api-card"><code>Create</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="skills-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Skills — Client</h2>
+        </div>
+        <p>Client-side skill read helpers and local skill definition creation.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetSkillLevel</code><span>Client</span></div>
+          <div class="api-card"><code>GetXP</code><span>Client</span></div>
+          <div class="api-card"><code>GetXPForLevel</code><span>Client</span></div>
+          <div class="api-card"><code>GetXPRequiredForLevel</code><span>Client</span></div>
+          <div class="api-card"><code>GetScaledXP</code><span>Client</span></div>
+          <div class="api-card"><code>Create</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local level = Bridge.Skills.GetSkillLevel(&#x27;hacking&#x27;)
 local xp = Bridge.Skills.GetXP(&#x27;hacking&#x27;)</code></pre>
-</section>
+      </section>
 
-<section id="target-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Target — Client</h2>
-  </div>
-  <p>Targeting wrapper for zones, entities, models, global player/vehicle options and interaction utilities.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>AddLocalEntity</code><span>Client</span></div><div class="api-card"><code>AddBoxZone</code><span>Client</span></div><div class="api-card"><code>AddGlobalPlayer</code><span>Client</span></div><div class="api-card"><code>AddGlobalVehicle</code><span>Client</span></div><div class="api-card"><code>AddModel</code><span>Client</span></div><div class="api-card"><code>RemoveLocalEntity</code><span>Client</span></div><div class="api-card"><code>RemoveZone</code><span>Client</span></div><div class="api-card"><code>RemoveGlobalPlayer</code><span>Client</span></div><div class="api-card"><code>RemoveGlobalVehicle</code><span>Client</span></div><div class="api-card"><code>RemoveModel</code><span>Client</span></div><div class="api-card"><code>GetCanInteract</code><span>Client</span></div><div class="api-card"><code>CreateCanInteract</code><span>Client</span></div><div class="api-card"><code>CanInteract</code><span>Client</span></div><div class="api-card"><code>FixOptions</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="target-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Target — Client</h2>
+        </div>
+        <p>Targeting wrapper for zones, entities, models, global player/vehicle options and interaction utilities.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>AddLocalEntity</code><span>Client</span></div>
+          <div class="api-card"><code>AddBoxZone</code><span>Client</span></div>
+          <div class="api-card"><code>AddGlobalPlayer</code><span>Client</span></div>
+          <div class="api-card"><code>AddGlobalVehicle</code><span>Client</span></div>
+          <div class="api-card"><code>AddModel</code><span>Client</span></div>
+          <div class="api-card"><code>RemoveLocalEntity</code><span>Client</span></div>
+          <div class="api-card"><code>RemoveZone</code><span>Client</span></div>
+          <div class="api-card"><code>RemoveGlobalPlayer</code><span>Client</span></div>
+          <div class="api-card"><code>RemoveGlobalVehicle</code><span>Client</span></div>
+          <div class="api-card"><code>RemoveModel</code><span>Client</span></div>
+          <div class="api-card"><code>GetCanInteract</code><span>Client</span></div>
+          <div class="api-card"><code>CreateCanInteract</code><span>Client</span></div>
+          <div class="api-card"><code>CanInteract</code><span>Client</span></div>
+          <div class="api-card"><code>FixOptions</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Target.AddBoxZone(&#x27;asylum_start&#x27;, vector3(0, 0, 0), vector3(2, 2, 2), 0.0, {
   { label = &#x27;Start heist&#x27;, icon = &#x27;fa-solid fa-skull&#x27;, onSelect = function() TriggerServerEvent(&#x27;asylum:start&#x27;) end }
 }, true)</code></pre>
-</section>
+      </section>
 
-<section id="vehiclekey-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Vehicle Key — Client</h2>
-  </div>
-  <p>Client-side vehicle key give/remove helper.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>GiveKeys</code><span>Client</span></div><div class="api-card"><code>RemoveKeys</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="vehiclekey-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Vehicle Key — Client</h2>
+        </div>
+        <p>Client-side vehicle key give/remove helper.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>GiveKeys</code><span>Client</span></div>
+          <div class="api-card"><code>RemoveKeys</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 Bridge.VehicleKey.GiveKeys(vehicle, GetVehicleNumberPlateText(vehicle))</code></pre>
-</section>
+      </section>
 
-<section id="version-server" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Server</span>
-    <h2>Version — Server</h2>
-  </div>
-  <p>Internal version checking at resource startup. No public API is exposed.</p>
-  
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="version-server" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Server</span>
+          <h2>Version — Server</h2>
+        </div>
+        <p>Internal version checking at resource startup. No public API is exposed.</p>
+
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 -- Bridge.Version.&lt;Function&gt;()</code></pre>
-</section>
+      </section>
 
-<section id="weather-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Weather — Client</h2>
-  </div>
-  <p>Client-side weather sync toggle.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>ToggleSync</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="weather-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Weather — Client</h2>
+        </div>
+        <p>Client-side weather sync toggle.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>ToggleSync</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 Bridge.Weather.ToggleSync(false)</code></pre>
-</section>
+      </section>
 
-<section id="zones-client" class="doc-section">
-  <div class="section-head">
-    <span class="pill">Client</span>
-    <h2>Zones — Client</h2>
-  </div>
-  <p>Zone creation and management wrapper for box, sphere and poly zones.</p>
-  <div class="api-grid"><div class="api-card"><code>GetResourceName</code><span>Client</span></div><div class="api-card"><code>Create</code><span>Client</span></div><div class="api-card"><code>Destroy</code><span>Client</span></div><div class="api-card"><code>DestroyByResource</code><span>Client</span></div><div class="api-card"><code>Get</code><span>Client</span></div></div>
-  
-  
-  
-  <h3>Voorbeeld</h3>
-  <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
+      <section id="zones-client" class="doc-section">
+        <div class="section-head">
+          <span class="pill">Client</span>
+          <h2>Zones — Client</h2>
+        </div>
+        <p>Zone creation and management wrapper for box, sphere and poly zones.</p>
+        <div class="api-grid">
+          <div class="api-card"><code>GetResourceName</code><span>Client</span></div>
+          <div class="api-card"><code>Create</code><span>Client</span></div>
+          <div class="api-card"><code>Destroy</code><span>Client</span></div>
+          <div class="api-card"><code>DestroyByResource</code><span>Client</span></div>
+          <div class="api-card"><code>Get</code><span>Client</span></div>
+        </div>
+
+
+
+        <h3>Voorbeeld</h3>
+        <pre><code>local Bridge = exports[&#x27;brnx_bridge&#x27;]:Bridge()
 local zone = Bridge.Zones.Create(&#x27;box&#x27;, {
   coords = vector3(100.0, 200.0, 30.0),
   size = vector3(10.0, 10.0, 5.0),
@@ -710,22 +1298,31 @@ local zone = Bridge.Zones.Create(&#x27;box&#x27;, {
   onEnter = function(self) print(&#x27;entered&#x27;) end,
   onExit = function(self) print(&#x27;left&#x27;) end
 })</code></pre>
-</section>
+      </section>
 
 
       <section class="doc-section" id="best-practices">
         <h2>Best Practices</h2>
         <ul>
-          <li>Laat scripts nooit direct afhankelijk zijn van <code>qbx_core</code>, <code>qb-core</code>, <code>es_extended</code>, <code>ox_inventory</code>, <code>ox_target</code> of <code>qb-target</code> als de bridge dezelfde actie kan uitvoeren.</li>
-          <li>Gebruik server modules voor server-only acties zoals inventory mutaties, money mutaties en server dispatch alerts.</li>
-          <li>Gebruik client modules voor UI, target, zones, fuel, weather, progressbar, menu, input en lokale player checks.</li>
-          <li>Hou deprecated functies alleen aan voor oude scripts. Nieuwe scripts gebruiken de primaire functie uit de module.</li>
+          <li>Laat scripts nooit direct afhankelijk zijn van <code>qbx_core</code>, <code>qb-core</code>,
+            <code>es_extended</code>, <code>ox_inventory</code>, <code>ox_target</code> of <code>qb-target</code> als de
+            bridge dezelfde actie kan uitvoeren.
+          </li>
+          <li>Gebruik server modules voor server-only acties zoals inventory mutaties, money mutaties en server dispatch
+            alerts.</li>
+          <li>Gebruik client modules voor UI, target, zones, fuel, weather, progressbar, menu, input en lokale player
+            checks.</li>
+          <li>Hou deprecated functies alleen aan voor oude scripts. Nieuwe scripts gebruiken de primaire functie uit de
+            module.</li>
         </ul>
       </section>
     </article>
   </main>
-  <footer class="footer"><div class="container">© <span class="js-brand-name">BrunxScript</span>. Documentation page.</div></footer>
+  <footer class="footer">
+    <div class="container">© <span class="js-brand-name">BrunxScript</span>. Documentation page.</div>
+  </footer>
   <script src="../assets/js/docs-data.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>
