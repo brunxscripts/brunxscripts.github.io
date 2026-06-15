@@ -1,127 +1,453 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BrunxScript documentation portal for FiveM scripts and BrunxBridge." />
-  <title>BrunxScript Documentation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brunx Bridge Documentation</title>
+  <meta name="description" content="Official documentation page for brnx_bridge, a future-proof FiveM bridge for ESX, QBCore, Qbox, OX, vRP and standalone resources." />
+  <style>
+    :root{
+      --bg:#070b12;--panel:#0d1420;--panel2:#111b2b;--text:#e9f1ff;--muted:#9fb0c9;--line:#203148;--brand:#39c5ff;--brand2:#7c5cff;--ok:#35d49a;--warn:#ffd166;--danger:#ff6b6b;--code:#05080d;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top left,rgba(57,197,255,.18),transparent 35%),radial-gradient(circle at 80% 10%,rgba(124,92,255,.16),transparent 32%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 0 28px rgba(57,197,255,.35)}.nav{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}.nav a{color:var(--muted)}.hero{padding:86px 0 42px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(57,197,255,.28);background:rgba(57,197,255,.08);color:#bdeeff;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(38px,7vw,72px);line-height:1.02;margin:20px 0 18px;letter-spacing:-2.4px}.hero p{font-size:19px;color:var(--muted);max-width:750px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:13px 18px;font-weight:800;border:1px solid transparent}.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:white;box-shadow:0 14px 44px rgba(57,197,255,.22)}.btn.secondary{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--text)}.hero-card{border:1px solid rgba(255,255,255,.11);background:linear-gradient(180deg,rgba(17,27,43,.9),rgba(13,20,32,.86));border-radius:26px;padding:22px;box-shadow:0 28px 90px rgba(0,0,0,.32)}.terminal{background:var(--code);border:1px solid #1d2a3e;border-radius:18px;padding:18px;overflow:auto}.dotrow{display:flex;gap:7px;margin-bottom:14px}.dot{width:10px;height:10px;border-radius:50%;background:#344155}.dot:nth-child(1){background:#ff6b6b}.dot:nth-child(2){background:#ffd166}.dot:nth-child(3){background:#35d49a}code,pre{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace}pre{margin:0;white-space:pre;overflow:auto;color:#d8e6ff;font-size:13.5px}.section{padding:38px 0}.section h2{font-size:34px;line-height:1.15;margin:0 0 12px;letter-spacing:-1px}.section .lead{color:var(--muted);margin:0 0 22px;max-width:850px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid rgba(255,255,255,.1);background:rgba(13,20,32,.72);border-radius:20px;padding:20px}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.table-wrap{overflow:auto;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(13,20,32,.68)}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:13px 14px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}th{color:#cfe5ff;background:rgba(255,255,255,.04);font-size:13px;text-transform:uppercase;letter-spacing:.08em}td{color:#dce8fa}td small{color:var(--muted)}.pill{display:inline-flex;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);border-radius:999px;padding:3px 9px;font-size:12px;color:#cfe5ff;margin:2px}.note{border-left:4px solid var(--brand);background:rgba(57,197,255,.08);border-radius:14px;padding:14px 16px;color:#d9edff}.warn{border-left-color:var(--warn);background:rgba(255,209,102,.08)}.footer{padding:44px 0 70px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:42px}.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.kpi div{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:16px;padding:14px}.kpi b{display:block;font-size:20px;color:var(--text)}.kpi span{color:var(--muted);font-size:13px}.copy-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.copy-title span{font-weight:800}.small{font-size:13px;color:var(--muted)}@media(max-width:900px){.hero-grid,.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.nav{display:none}.kpi{grid-template-columns:1fr 1fr}.hero{padding-top:54px}}@media(max-width:560px){.kpi{grid-template-columns:1fr}.actions .btn{width:100%}.hero-card{padding:14px}.wrap{width:min(100% - 22px,1180px)}}
+  </style>
 </head>
-<body data-page="home" data-base="">
-  <div class="bg"></div>
-
-  <header class="header">
-    <a class="brand" href="index.html">
-      <img class="brand-logo js-logo" alt="BrunxScript logo">
-      <span><strong class="js-brand-name">BrunxScript</strong><span class="js-brand-tagline">Documentation</span></span>
-    </a>
-    <nav class="nav">
-      <a href="#scripts">Scripts</a>
-      <a href="#bridge">BrunxBridge</a>
-      <a href="#future">Future-proof</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn small js-bridge-download" href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download Bridge</a>
-    <button class="hamb" type="button">Menu</button>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Brunx Bridge home"><span class="logo"></span><span>Brunx Bridge</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#install">Install</a><a href="#configuration">Configuration</a><a href="#exports">Exports</a><a href="#examples">Examples</a><a href="#elevators">Elevators</a><a href="#deployment">GitHub Pages</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="wrap hero-grid">
         <div>
-          <span class="eyebrow">FiveM Documentation System</span>
-          <h1>Documentation that looks as clean as your scripts.</h1>
-          <p class="lead">A premium, GitHub Pages-ready documentation website for BrunxScript. Each script gets its own documentation page, while all content stays easy to edit from one central data file.</p>
+          <span class="badge">FiveM Resource • Bridge Layer • v1.0.1</span>
+          <h1>One bridge for modern FiveM resources.</h1>
+          <p>Brunx Bridge is a future-proof compatibility layer for ESX, QBCore, Qbox, OX, vRP and standalone resources. It centralizes framework detection, job checks, money handling, inventory helpers, target zones, UI helpers, callbacks and configurable elevators.</p>
           <div class="actions">
-            <a class="btn js-bridge-download" href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download BrunxBridge</a>
-            <a class="btn ghost" href="#scripts">Browse script docs</a>
+            <a class="btn primary small js-bridge-download" href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download Bridge</a>
+            <a class="btn secondary" href="#quick-start">Quick start</a>
           </div>
-          <div class="stats">
-            <div class="stat"><strong id="scriptCount">3+</strong><span>Script pages</span></div>
-            <div class="stat"><strong>0</strong><span>Build steps</span></div>
-            <div class="stat"><strong>100%</strong><span>GitHub Pages ready</span></div>
+          <div class="kpi" aria-label="Highlights">
+            <div><b>Auto</b><span>framework detection</span></div>
+            <div><b>OX</b><span>default UI layer</span></div>
+            <div><b>Target</b><span>ox/qb/drawtext fallback</span></div>
+            <div><b>Elevators</b><span>global + map based</span></div>
           </div>
         </div>
-        <div class="showcase reveal">
-          <div class="window">
-            <div class="win-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-            <div class="win-body">
-              <div class="terminal-line"><span>docs/</span>brunxbridge.html</div>
-              <div class="terminal-line"><span>bridge/</span>client-api</div>
-              <div class="terminal-line"><span>bridge/</span>server-api</div>
-              <div class="terminal-line"><span>bridge/</span>target-api</div>
-            </div>
+        <div class="hero-card">
+          <div class="terminal">
+            <div class="dotrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<pre><code>-- Server-side usage
+local Bridge = exports['brnx_bridge']:GetBridge()
+
+RegisterCommand('bridgejob', function(source)
+    local job = Bridge.GetJob(source)
+    print(json.encode(job))
+end, false)
+
+-- Client-side usage
+local Bridge = exports['brnx_bridge']:GetBridge()
+Bridge.Notify({
+    title = 'Bridge',
+    description = 'Client bridge loaded.',
+    type = 'success'
+})</code></pre>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="scripts">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Script documentation</span>
-            <h2>Separate page for every script.</h2>
-            <p>Browse official BrunxScript resource documentation. Each page includes setup, configuration, exports, events and release notes.</p>
-          </div>
-          <input id="searchInput" class="search" type="search" placeholder="Search scripts...">
-        </div>
-        <div id="scriptGrid" class="grid"></div>
-      </div>
-    </section>
-
-    <section class="section" id="bridge">
-      <div class="container bridge">
-        <div class="panel reveal">
-          <span class="eyebrow">BrunxBridge</span>
-          <h2>BrunxBridge package.</h2>
-          <p>Download the official bridge package and follow the installation guide for your framework. BrunxBridge is the required compatibility layer for BrunxScript resources.</p>
-          <div class="actions">
-            <a class="btn js-bridge-download" href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download BrunxBridge</a>
-            <a class="btn ghost" href="docs/brunxbridge.html">Read bridge docs</a>
-          </div>
-        </div>
-        <div class="panel reveal">
-          <h2>Recommended structure</h2>
-          <div class="steps">
-            <div class="step"><div><strong>Install BrunxBridge</strong><p>Start the bridge before every BrunxScript resource.</p></div></div>
-            <div class="step"><div><strong>Select your framework</strong><p>Use automatic detection or configure your framework manually.</p></div></div>
-            <div class="step"><div><strong>Connect resources</strong><p>Use the documented exports and events for clean integrations.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="future">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Future-proof</span>
-            <h2>Made to grow with BrunxScript.</h2>
-            <p>Built for long-term resource documentation, stable API references and clean customer onboarding.</p>
-          </div>
-        </div>
+    <section class="section" id="overview">
+      <div class="wrap">
+        <h2>What it does</h2>
+        <p class="lead">Instead of writing separate code for every framework, inventory, target and UI system, your scripts can call Brunx Bridge once and let the bridge normalize the differences.</p>
         <div class="grid">
-          <div class="panel reveal"><h3>Stable API reference</h3><p>Every export, event and configuration option is documented in one consistent format.</p></div>
-          <div class="panel reveal"><h3>Static hosting</h3><p>No backend, no database and no build system. Fast to load and easy to host on modern static platforms.</p></div>
-          <div class="panel reveal"><h3>Dedicated script pages</h3><p>Each resource has its own page with requirements, installation steps, examples and changelog.</p></div>
+          <article class="card"><h3>Framework abstraction</h3><p>Detects Qbox, QBCore, ESX, OX, vRP or standalone mode and exposes normalized player, identifier, name, job, grade, duty and money helpers.</p></article>
+          <article class="card"><h3>Inventory helpers</h3><p>Provides simple server-side item helpers with ox_inventory support and player function fallback for compatible frameworks.</p></article>
+          <article class="card"><h3>Target fallback</h3><p>Uses ox_target when available, qb-target when available, and a drawtext interaction fallback when no target resource is running.</p></article>
+          <article class="card"><h3>UI layer</h3><p>Uses ox_lib for notifications, progress bars, context menus and text UI, keeping UI usage consistent across resources.</p></article>
+          <article class="card"><h3>Callbacks</h3><p>Wraps ox_lib callback registration and client triggering so scripts can use one consistent pattern.</p></article>
+          <article class="card"><h3>Elevators</h3><p>Includes a configurable elevator system with global elevators, map-specific elevators, job locks, boss locks, progress bars and carry support.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head"><div><span class="eyebrow">FAQ</span><h2>Common questions.</h2></div></div>
-        <div id="faqGrid" class="grid"></div>
+    <section class="section" id="install">
+      <div class="wrap">
+        <h2>Installation</h2>
+        <p class="lead">Install the bridge before any resource that depends on it.</p>
+        <div class="two">
+          <div class="card">
+            <h3>1. Download</h3>
+            <p>Download the latest main branch archive and extract it into your FiveM resources folder.</p>
+            <p style="margin-top:14px"><a class="btn primary small js-bridge-download" href="https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip">Download Bridge</a></p>
+          </div>
+          <div class="card">
+            <h3>2. Rename folder</h3>
+            <p>Make sure the folder name is exactly:</p>
+            <div class="terminal" style="margin-top:12px"><pre><code>brnx_bridge</code></pre></div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:18px" id="quick-start">
+          <div class="copy-title"><span>server.cfg</span><span class="small">Load order matters</span></div>
+          <div class="terminal"><pre><code># Required dependency
+ensure ox_lib
+
+# Optional, depending on your stack
+ensure oxmysql
+ensure ox_inventory
+ensure ox_target
+# ensure qb-target
+
+# Framework should be started before the bridge when possible
+ensure qbx_core
+# ensure qb-core
+# ensure es_extended
+
+# Bridge
+ensure brnx_bridge
+
+# Your scripts that use the bridge
+ensure your_resource</code></pre></div>
+        </div>
+        <p class="note warn" style="margin-top:18px"><strong>Important:</strong> ox_lib is required by the resource manifest. oxmysql is included as a server script dependency path, so keep oxmysql available if you use database-backed bridge features or other resources that depend on it.</p>
+      </div>
+    </section>
+
+    <section class="section" id="configuration">
+      <div class="wrap">
+        <h2>Configuration</h2>
+        <p class="lead">Edit <code>shared/config.lua</code>. Use <code>auto</code> unless you want to force a specific framework, inventory or target system.</p>
+        <div class="terminal"><pre><code>Config.Debug = false
+Config.Locale = 'nl'
+
+-- auto, qbox, qbcore, esx, ox, vrp, standalone
+Config.Framework = 'auto'
+
+-- auto, ox_inventory, qb-inventory, lj-inventory, ps-inventory,
+-- qs-inventory, origen_inventory, codem-inventory, core_inventory,
+-- mf-inventory, esx_inventory, standalone
+Config.Inventory = 'auto'
+
+-- auto, ox_target, qb-target, drawtext
+Config.Target = 'auto'
+
+Config.NotifySystem = 'ox_lib'
+Config.Menu = 'ox_lib'
+Config.Input = 'ox_lib'
+Config.Progress = 'ox_lib'
+Config.TextUI = 'ox_lib'</code></pre></div>
+        <div class="table-wrap" style="margin-top:18px">
+          <table>
+            <thead><tr><th>Option</th><th>Description</th><th>Typical value</th></tr></thead>
+            <tbody>
+              <tr><td><code>Config.Debug</code></td><td>Prints bridge debug information when enabled.</td><td><code>false</code></td></tr>
+              <tr><td><code>Config.Locale</code></td><td>Default locale file used by the bridge.</td><td><code>nl</code> or <code>en</code></td></tr>
+              <tr><td><code>Config.Framework</code></td><td>Framework mode. Auto-detection supports Qbox, QBCore, ESX, OX, vRP and standalone.</td><td><code>auto</code></td></tr>
+              <tr><td><code>Config.Inventory</code></td><td>Inventory mode. Auto-detection can be used, or you can force your inventory type.</td><td><code>auto</code></td></tr>
+              <tr><td><code>Config.Target</code></td><td>Target mode. Falls back to drawtext if ox_target or qb-target is not available.</td><td><code>auto</code></td></tr>
+              <tr><td><code>Config.ResourceNames</code></td><td>Resource name aliases used during auto-detection.</td><td>Keep defaults unless your resources use custom names.</td></tr>
+              <tr><td><code>Config.CustomGetPlayerJob</code></td><td>Optional server hook to return a custom normalized job object.</td><td><code>function(source) return nil end</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="exports">
+      <div class="wrap">
+        <h2>Exports and Bridge API</h2>
+        <p class="lead">The recommended pattern is to get the bridge object once and call functions from that object. Direct exports are intentionally small; the Bridge object contains the actual module helpers.</p>
+        <div class="two">
+          <div class="card">
+            <h3>Server direct exports</h3>
+            <div class="terminal"><pre><code>exports['brnx_bridge']:GetBridge()
+exports['brnx_bridge']:GetFramework()
+exports['brnx_bridge']:GetPlayer(source)
+exports['brnx_bridge']:GetIdentifier(source)
+exports['brnx_bridge']:GetJob(source)
+exports['brnx_bridge']:GetJobName(source)
+exports['brnx_bridge']:HasJob(source, jobs)
+exports['brnx_bridge']:Notify(source, data)</code></pre></div>
+          </div>
+          <div class="card">
+            <h3>Client direct exports</h3>
+            <div class="terminal"><pre><code>exports['brnx_bridge']:GetBridge()
+exports['brnx_bridge']:GetFramework()
+exports['brnx_bridge']:Notify(data)
+exports['brnx_bridge']:GetPlayerData()
+exports['brnx_bridge']:GetJob()
+exports['brnx_bridge']:GetJobName()
+exports['brnx_bridge']:HasJob(jobs)</code></pre></div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:28px">Server Bridge object</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Function</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>Bridge.GetFramework()</code></td><td><code>string</code></td><td>Returns detected framework name.</td></tr>
+              <tr><td><code>Bridge.GetPlayer(source)</code></td><td><code>table | nil</code></td><td>Returns framework player object or standalone fallback.</td></tr>
+              <tr><td><code>Bridge.GetIdentifier(source)</code></td><td><code>string | nil</code></td><td>Returns citizenid, license, identifier or license identifier fallback.</td></tr>
+              <tr><td><code>Bridge.GetName(source)</code></td><td><code>string</code></td><td>Returns character name when available, otherwise player name.</td></tr>
+              <tr><td><code>Bridge.GetJob(source)</code></td><td><code>table</code></td><td>Returns normalized job: <code>name</code>, <code>label</code>, <code>grade</code>, <code>gradeLabel</code>, <code>isBoss</code>, <code>type</code>, <code>duty</code>.</td></tr>
+              <tr><td><code>Bridge.GetJobName(source)</code></td><td><code>string | nil</code></td><td>Returns normalized job name only.</td></tr>
+              <tr><td><code>Bridge.GetGrade(source)</code></td><td><code>number</code></td><td>Returns normalized job grade.</td></tr>
+              <tr><td><code>Bridge.IsOnDuty(source)</code></td><td><code>boolean</code></td><td>Returns false only when duty is explicitly false.</td></tr>
+              <tr><td><code>Bridge.HasJob(source, jobs)</code></td><td><code>boolean</code></td><td>Checks string, array or rule table job access.</td></tr>
+              <tr><td><code>Bridge.GetPlayers()</code></td><td><code>table</code></td><td>Returns online player sources.</td></tr>
+              <tr><td><code>Bridge.GetPlayersByJob(jobs)</code></td><td><code>table</code></td><td>Returns online players matching the job rule.</td></tr>
+              <tr><td><code>Bridge.GetMoney(source, account)</code></td><td><code>number</code></td><td>Reads player money from cash, bank or another supported account.</td></tr>
+              <tr><td><code>Bridge.AddMoney(source, account, amount, reason)</code></td><td><code>boolean</code></td><td>Adds player money through the active framework.</td></tr>
+              <tr><td><code>Bridge.RemoveMoney(source, account, amount, reason)</code></td><td><code>boolean</code></td><td>Removes player money through the active framework.</td></tr>
+              <tr><td><code>Bridge.Notify(source, data)</code></td><td><code>nil</code></td><td>Sends a bridge notification to one client.</td></tr>
+              <tr><td><code>Bridge.RegisterCallback(name, cb)</code></td><td><code>boolean</code></td><td>Registers an ox_lib server callback.</td></tr>
+              <tr><td><code>Bridge.AddItem(source, item, amount, metadata, slot)</code></td><td><code>boolean</code></td><td>Adds an item using ox_inventory or framework fallback.</td></tr>
+              <tr><td><code>Bridge.RemoveItem(source, item, amount, slot, metadata)</code></td><td><code>boolean</code></td><td>Removes an item using ox_inventory or framework fallback.</td></tr>
+              <tr><td><code>Bridge.HasItem(source, item, amount)</code></td><td><code>boolean</code></td><td>Checks if a player has at least the requested amount.</td></tr>
+              <tr><td><code>Bridge.Society.GetMoney(account)</code></td><td><code>number</code></td><td>Reads society account balance from supported banking resources.</td></tr>
+              <tr><td><code>Bridge.Society.AddMoney(account, amount)</code></td><td><code>boolean</code></td><td>Adds money to a society account.</td></tr>
+              <tr><td><code>Bridge.Society.RemoveMoney(account, amount)</code></td><td><code>boolean</code></td><td>Removes money from a society account.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:28px">Client Bridge object</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Function</th><th>Returns</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>Bridge.GetFramework()</code></td><td><code>string</code></td><td>Returns detected client framework.</td></tr>
+              <tr><td><code>Bridge.GetPlayerData()</code></td><td><code>table</code></td><td>Returns framework player data when available.</td></tr>
+              <tr><td><code>Bridge.GetJob()</code></td><td><code>table</code></td><td>Returns normalized client job object.</td></tr>
+              <tr><td><code>Bridge.GetJobName()</code></td><td><code>string | nil</code></td><td>Returns normalized job name only.</td></tr>
+              <tr><td><code>Bridge.GetGrade()</code></td><td><code>number</code></td><td>Returns normalized job grade.</td></tr>
+              <tr><td><code>Bridge.IsOnDuty()</code></td><td><code>boolean</code></td><td>Returns duty state from normalized job data.</td></tr>
+              <tr><td><code>Bridge.HasJob(jobs)</code></td><td><code>boolean</code></td><td>Checks current player job against a string, array or table.</td></tr>
+              <tr><td><code>Bridge.Notify(data)</code></td><td><code>nil</code></td><td>Shows an ox_lib notification or GTA feed fallback.</td></tr>
+              <tr><td><code>Bridge.TriggerCallback(name, cb, ...)</code></td><td><code>nil</code></td><td>Triggers an ox_lib callback from the client.</td></tr>
+              <tr><td><code>Bridge.ShowTextUI(text, options)</code></td><td><code>boolean</code></td><td>Shows ox_lib text UI.</td></tr>
+              <tr><td><code>Bridge.HideTextUI()</code></td><td><code>boolean</code></td><td>Hides ox_lib text UI.</td></tr>
+              <tr><td><code>Bridge.Progress(data)</code></td><td><code>boolean</code></td><td>Runs an ox_lib progress bar.</td></tr>
+              <tr><td><code>Bridge.ContextMenu(data)</code></td><td><code>boolean</code></td><td>Registers and opens an ox_lib context menu.</td></tr>
+              <tr><td><code>Bridge.Target.AddBoxZone(id, data)</code></td><td><code>boolean</code></td><td>Adds a box zone through ox_target, qb-target or drawtext fallback.</td></tr>
+              <tr><td><code>Bridge.Target.AddSphereZone(id, data)</code></td><td><code>boolean</code></td><td>Adds a sphere zone through ox_target or drawtext fallback.</td></tr>
+              <tr><td><code>Bridge.Target.AddEntity(entity, options)</code></td><td><code>boolean</code></td><td>Adds target options to a local entity.</td></tr>
+              <tr><td><code>Bridge.Target.RemoveZone(id)</code></td><td><code>boolean</code></td><td>Removes a previously created zone.</td></tr>
+              <tr><td><code>Bridge.Target.RemoveEntity(entity, labels)</code></td><td><code>boolean</code></td><td>Removes target options from a local entity.</td></tr>
+              <tr><td><code>Bridge.Target.DrawText(data)</code></td><td><code>boolean</code></td><td>Shows a drawtext/text UI interaction.</td></tr>
+              <tr><td><code>Bridge.Target.HideDrawText()</code></td><td><code>boolean</code></td><td>Hides drawtext/text UI.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="examples">
+      <div class="wrap">
+        <h2>Usage examples</h2>
+        <p class="lead">These examples are designed for scripts that depend on <code>brnx_bridge</code>.</p>
+        <div class="two">
+          <div class="card">
+            <h3>Server: job lock</h3>
+            <div class="terminal"><pre><code>local Bridge = exports['brnx_bridge']:GetBridge()
+
+RegisterNetEvent('my_resource:server:openArmory', function()
+    local src = source
+
+    if not Bridge.HasJob(src, {
+        police = { minGrade = 1, dutyOnly = true },
+        police_be = true,
+        marechaussee = true
+    }) then
+        Bridge.Notify(src, {
+            title = 'Access denied',
+            description = 'You are not allowed to open this armory.',
+            type = 'error'
+        })
+        return
+    end
+
+    Bridge.Notify(src, {
+        title = 'Armory',
+        description = 'Access granted.',
+        type = 'success'
+    })
+end)</code></pre></div>
+          </div>
+          <div class="card">
+            <h3>Server: items and money</h3>
+            <div class="terminal"><pre><code>local Bridge = exports['brnx_bridge']:GetBridge()
+
+RegisterNetEvent('my_resource:server:buyKit', function()
+    local src = source
+    local price = 750
+
+    if Bridge.GetMoney(src, 'bank') < price then
+        Bridge.Notify(src, {
+            title = 'Payment failed',
+            description = 'Not enough money in your bank account.',
+            type = 'error'
+        })
+        return
+    end
+
+    if Bridge.RemoveMoney(src, 'bank', price, 'buy-kit') then
+        Bridge.AddItem(src, 'repairkit', 1)
+        Bridge.Notify(src, {
+            title = 'Purchase complete',
+            description = 'You received a repair kit.',
+            type = 'success'
+        })
+    end
+end)</code></pre></div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:18px">
+          <h3>Client: target zone with fallback</h3>
+          <div class="terminal"><pre><code>local Bridge = exports['brnx_bridge']:GetBridge()
+
+CreateThread(function()
+    Bridge.Target.AddBoxZone('cityhall_counter', {
+        coords = vec3(-545.45, -203.88, 38.22),
+        size = vec3(2.0, 1.2, 2.0),
+        rotation = 30.0,
+        distance = 2.0,
+        options = {
+            {
+                name = 'open_cityhall',
+                label = 'Open City Hall',
+                icon = 'fa-solid fa-building-columns',
+                onSelect = function()
+                    TriggerEvent('my_cityhall:client:open')
+                end
+            }
+        }
+    })
+end)</code></pre></div>
+        </div>
+        <div class="card" style="margin-top:18px">
+          <h3>Client: progress bar</h3>
+          <div class="terminal"><pre><code>local Bridge = exports['brnx_bridge']:GetBridge()
+
+local completed = Bridge.Progress({
+    duration = 5000,
+    label = 'Processing...',
+    canCancel = true,
+    disable = {
+        move = true,
+        car = true,
+        combat = true
+    }
+})
+
+if completed then
+    Bridge.Notify({
+        title = 'Done',
+        description = 'The action completed successfully.',
+        type = 'success'
+    })
+end</code></pre></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="elevators">
+      <div class="wrap">
+        <h2>Elevator system</h2>
+        <p class="lead">Brunx Bridge includes global elevators and map-specific elevators. Floors support job locks, job type locks, minimum grades, boss-only access and optional hiding for unauthorized players.</p>
+        <div class="terminal"><pre><code>Config.Elevators = true
+Config.DrawDistance = 10.0
+Config.InteractDistance = 2.0
+Config.ElevatorProgressDuration = 5000
+Config.ElevatorProgressLabel = 'Lift wordt gebruikt...'
+Config.ElevatorCarryEnabled = true
+Config.ElevatorCarryDistance = 3.0
+Config.ElevatorCarryCuffedOnly = false
+
+Config.GlobalElevators = {
+    {
+        name = 'Example Elevator',
+        showMarker = true,
+        floors = {
+            {
+                label = 'Lobby',
+                coords = vector4(0.0, 0.0, 30.0, 0.0),
+                jobLock = nil
+            },
+            {
+                label = 'Management',
+                coords = vector4(0.0, 0.0, 40.0, 0.0),
+                jobLock = {
+                    enabled = true,
+                    hideIfNoAccess = false,
+                    jobs = {
+                        police = { minGrade = 3, bossOnly = true },
+                        ambulance = { minGrade = 4 }
+                    },
+                    jobTypes = {
+                        leo = { minGrade = 3 },
+                        ems = { minGrade = 4 }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre></div>
+        <div class="grid" style="margin-top:18px">
+          <article class="card"><h3><code>jobLock.jobs</code></h3><p>Use job names as keys. Value can be <code>true</code>, a minimum grade number, or a table with <code>minGrade</code>, <code>bossOnly</code> and <code>dutyOnly</code>.</p></article>
+          <article class="card"><h3><code>jobLock.jobTypes</code></h3><p>Use normalized job types such as <code>leo</code> or <code>ems</code> when your framework exposes a job type.</p></article>
+          <article class="card"><h3><code>hideIfNoAccess</code></h3><p>When true, unauthorized floors can be hidden from the menu instead of shown as locked.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="wrap">
+        <h2>Events</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Event</th><th>Side</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>brnx_bridge:ready</code></td><td>Client + Server</td><td>Triggered shortly after the bridge initializes.</td></tr>
+              <tr><td><code>brnx_bridge:client:notify</code></td><td>Client</td><td>Internal notification event used by the server <code>Bridge.Notify(source, data)</code> helper.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="deployment">
+      <div class="wrap">
+        <h2>Use this as a GitHub Pages page</h2>
+        <p class="lead">Save this file as <code>index.html</code> in the repository used for your GitHub Pages website.</p>
+        <div class="two">
+          <div class="card">
+            <h3>Option A: Repository root</h3>
+            <p>Place <code>index.html</code> in the root of your pages repository. In GitHub, go to <strong>Settings → Pages</strong> and publish from the main branch root.</p>
+          </div>
+          <div class="card">
+            <h3>Option B: docs folder</h3>
+            <p>Place <code>index.html</code> inside <code>/docs</code>. In GitHub, go to <strong>Settings → Pages</strong> and publish from the main branch <code>/docs</code> folder.</p>
+          </div>
+        </div>
+        <p class="note" style="margin-top:18px">The download button already points to <code>https://github.com/brunxscripts/brunx_bridge/archive/refs/heads/main.zip</code>. You can replace the URL later if you move the repository or create release builds.</p>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="container">© <span class="js-brand-name">BrunxScript</span>. Built for clean FiveM resource documentation.</div></footer>
-  <script src="assets/js/docs-data.js"></script>
-  <script src="assets/js/main.js"></script>
+  <footer class="footer">
+    <div class="wrap">
+      <strong>Brunx Bridge Documentation</strong><br />
+      Built for FiveM resources that need one clean bridge across multiple frameworks, inventories, target systems and UI layers.
+    </div>
+  </footer>
 </body>
 </html>
